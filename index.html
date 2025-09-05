@@ -53,6 +53,10 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  
+    <!-- CSS with automatic cache busting -->
+    <link rel="stylesheet" href="style.css?v=<script>document.write(Date.now());</script>">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -3946,5 +3950,8 @@ animateProgressBars();
 }); // end DOMContentLoaded
 
     </script>
+
+      <!-- JS with automatic cache busting -->
+    <script src="main.js?v=<script>document.write(Date.now());</script>"></script>
 </body>
 </html>

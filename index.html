@@ -2760,7 +2760,126 @@ img, .portfolio-img, .attachment-img img {
     font-size: 2rem;
   }
 }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+}
 
+/* Fix for the Lottie animation container */
+.contact-form dotlottie-wc {
+  max-width: 200px !important;
+  margin-bottom: 20px;
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+/* Individual action buttons */
+.action-btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 15px 20px;
+  font-size: 1rem;
+}
+
+/* Social section improvements */
+.social-section {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.social-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+/* Map container adjustments */
+.map-container {
+  margin-top: 30px;
+  height: 250px;
+}
+
+.map-placeholder {
+  padding: 15px;
+}
+
+.map-placeholder dotlottie-wc {
+  max-width: 150px !important;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-info {
+    order: 2;
+  }
+  
+  .contact-form {
+    order: 1;
+    padding: 0;
+  }
+  
+  .social-links {
+    gap: 8px;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 15px !important;
+  }
+  
+  .action-buttons {
+    gap: 12px;
+  }
+  
+  .action-btn {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .map-container {
+    height: 200px;
+  }
+}
 /* Fix for contact section on very small screens */
 @media (max-width: 280px) {
   .contact-content {
@@ -3550,21 +3669,22 @@ img, .portfolio-img, .attachment-img img {
                         </div>
                     </div>
                     
-                    <div class="contact-form">
-                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-<dotlottie-wc src="https://lottie.host/637599c9-e8bd-40b1-bdcd-4775e3fc6051/ooOlomztY5.lottie" style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
-                         <div class="action-buttons">
-                          <a href="https://wa.me/250796302724" target="_blank" rel="noopener" class="action-btn"> Chat
-                           <i class="fab fa-whatsapp"></i></a>
-           
-        
-        <a href="tel:+250796302724" class="action-btn" phone">Hire me
-            <i class="fa-solid fa-briefcase""></i>
-        </a>
-        
-                        </div>
-                    </div>
-                </div>
+                   <div class="contact-form">
+                              <div class="form-visual">
+                                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+                                <dotlottie-wc src="https://lottie.host/637599c9-e8bd-40b1-bdcd-4775e3fc6051/ooOlomztY5.lottie" style="width: 100%; max-width: 300px; height: auto;" speed="1" autoplay loop></dotlottie-wc>
+                              </div>
+                              
+                              <div class="action-buttons">
+                                <a href="https://wa.me/250796302724" target="_blank" rel="noopener" class="action-btn"> 
+                                  <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                                <a href="tel:+250796302724" class="action-btn">
+                                  <i class="fa-solid fa-briefcase"></i> Hire me
+                                </a>
+                              </div>
+                              </div>
+            </div>
                 
                 <div class="map-container">
                     <div class="map-placeholder">

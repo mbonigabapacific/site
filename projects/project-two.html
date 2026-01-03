@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project Two — API Service | Mbonigaba Pacific</title>
+  <meta name="description" content="Project Two: Scalable API service built with Node.js and Express featuring rate-limiting, tests and observability." />
+  <meta name="keywords" content="Node.js, Express, API, DevOps, Kubernetes, Docker, Portfolio, Mbonigaba Pacific" />
+  <meta name="author" content="Mbonigaba Pacific" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="PfNXKP3ZrYzhZEleFm3y3m_BlQJTI9XDAYsX4rw5OAs" />
+  
+  <link rel="canonical" href="https://mbonigabapacific.github.io/site/projects/project-two.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Project Two — API Service" />
+  <meta property="og:description" content="Scalable REST API with observability, rate-limiting and automated tests." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mbonigabapacific.github.io/site/projects/project-two.html" />
+  <meta property="og:image" content="https://mbonigabapacific.github.io/site/images/pic02.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Two — API Service" />
+  <meta name="twitter:description" content="Scalable REST API with observability, rate-limiting and automated tests." />
+  <meta name="twitter:image" content="https://mbonigabapacific.github.io/site/images/pic02.jpg" />
+  <meta name="twitter:site" content="@mbonigabapac" />
+
+  <!-- PWA / Mobile Theme Colors -->
+  <meta name="theme-color" content="#FF8800" id="theme-color-meta" />
+  <meta name="msapplication-navbutton-color" content="#FF8800" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon_io/site.webmanifest" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Project page custom styles -->
+  <style>
+    body { font-family: 'Rajdhani', 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .panel { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); animation: slideInUp 0.8s ease; }
+    header { margin-bottom: 2rem; animation: fadeInDown 0.6s ease; }
+    h1 { color: #FF8800; font-size: 2.2rem; margin-bottom: 0.5rem; position: relative; padding-bottom: 0.5rem; }
+    h1:after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: #FF8800; animation: expandWidth 0.8s ease 0.3s forwards; }
+    .lead { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; line-height: 1.6; animation: fadeIn 0.8s ease 0.2s both; }
+    h2 { color: #333; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #FF8800; padding-bottom: 0.5rem; animation: slideInLeft 0.6s ease; }
+    section { margin-bottom: 1.5rem; animation: fadeInScale 0.7s ease; }
+    ul { margin-left: 1.5rem; }
+    li { margin-bottom: 0.8rem; line-height: 1.6; animation: slideInLeft 0.6s ease; animation-fill-mode: both; }
+    li:nth-child(1) { animation-delay: 0.1s; }
+    li:nth-child(2) { animation-delay: 0.2s; }
+    li:nth-child(3) { animation-delay: 0.3s; }
+    li:nth-child(4) { animation-delay: 0.4s; }
+    p { line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    picture { display: block; margin: 2rem 0; animation: fadeInScale 0.8s ease; }
+    img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+    img:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; color: #888; font-size: 0.95rem; animation: fadeIn 0.8s ease 0.5s both; }
+    .btn-inline { display: inline-block; padding: 0.55rem 0.95rem; border-radius: 6px; background: #FF8800; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; margin: 0.2rem; border: none; cursor: pointer; }
+    .btn-inline:hover { background: #FF9922; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255,136,0,0.3); }
+    
+    /* Tech tags */
+    .tech-tag { display: inline-block; background: rgba(255,136,0,0.1); color: #FF8800; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem 0.25rem 0.25rem 0; font-weight: 600; animation: bounceIn 0.6s ease; }
+    
+    /* Project highlights */
+    .highlight-box { background: linear-gradient(135deg, rgba(255,136,0,0.1) 0%, rgba(255,136,0,0.05) 100%); border-left: 4px solid #FF8800; padding: 1.2rem; margin: 1.5rem 0; border-radius: 6px; animation: slideInLeft 0.7s ease; transition: all 0.3s ease; }
+    .highlight-box:hover { transform: translateX(8px); box-shadow: 0 6px 16px rgba(255,136,0,0.15); }
+    
+    /* Scroll reveal */
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .scroll-reveal.in-view { opacity: 1; transform: translateY(0); }
+    
+    @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.9); } 50% { transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes expandWidth { to { width: 100%; } }
+    
+    @media (max-width: 768px) {
+      .panel { padding: 1.5rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      header p { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Project Two — API Service",
+    "codeRepository":"https://github.com/mbonigaba/project-two",
+    "programmingLanguage":"Node.js",
+    "description":"A production-ready REST API service with throttling, logging and tests.",
+    "author":{"@type":"Person","name":"Mbonigaba Pacific"}
+  }
+  </script>
+</head>
+<body>
+  <main id="main">
+    <article class="panel">
+      <header>
+        <h1>Project Two — API Service</h1>
+        <p class="lead">Scalable REST API implementing rate-limiting, structured logging and automated tests.</p>
+        <p>
+          <a href="https://github.com/mbonigaba/project-two" class="btn-inline" target="_blank" rel="noopener noreferrer">Repository</a>
+          <a href="../index.html" class="btn-inline">Back</a>
+        </p>
+      </header>
+
+      <section>
+        <picture>
+          <source type="image/webp"
+            srcset="../img/project2-480.webp 480w, ../img/project2-800.webp 800w, ../img/project2-1200.webp 1200w"
+            sizes="(max-width:600px)480px, (max-width:1000px)800px, 1200px">
+          <source type="image/jpeg"
+            srcset="../img/project2-480.jpg 480w, ../img/project2-800.jpg 800w, ../img/project2-1200.jpg 1200w"
+            sizes="(max-width:600px)480px, (max-width:1000px)800px, 1200px">
+          <img src="../img/project2-800.webp" alt="Project Two screenshot" loading="lazy" style="width:100%; border-radius:8px; max-height:420px; object-fit:cover;">
+        </picture>
+      </section>
+
+      <section>
+        <h2>Overview</h2>
+        <p>Designed for high throughput with rate-limiting and circuit-breaker patterns, this API includes request validation, OpenAPI spec, and integration tests to ensure reliability and performance at scale.</p>
+      </section>
+
+      <section>
+        <h2>Key Features</h2>
+        <div class="highlight-box">
+          <h5>Rate Limiting & Throttling</h5>
+          <p>Advanced rate-limiting strategies with token bucket algorithm to prevent abuse and ensure fair resource allocation.</p>
+        </div>
+        <div class="highlight-box">
+          <h5>Comprehensive Testing</h5>
+          <p>85% code coverage with integration and unit tests using Jest. Automated test suite runs on every commit.</p>
+        </div>
+        <div class="highlight-box">
+          <h5>Observability</h5>
+          <p>Prometheus metrics, structured logging, and Grafana dashboards for real-time monitoring and alerting.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tech Stack</h2>
+        <div>
+          <p><strong>Runtime & Framework:</strong></p>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Express</span>
+          <span class="tech-tag">TypeScript</span>
+        </div>
+        <p style="margin-top: 1rem;"><strong>Testing & Quality:</strong></p>
+        <div>
+          <span class="tech-tag">Jest</span>
+          <span class="tech-tag">Supertest</span>
+          <span class="tech-tag">ESLint</span>
+        </div>
+        <p style="margin-top: 1rem;"><strong>Monitoring & Metrics:</strong></p>
+        <div>
+          <span class="tech-tag">Prometheus</span>
+          <span class="tech-tag">Grafana</span>
+          <span class="tech-tag">Winston</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Performance Metrics</h2>
+        <ul>
+          <li><strong>Response Time:</strong> P95 latency of 45ms under normal load</li>
+          <li><strong>Throughput:</strong> Handles 10,000 requests/second with graceful degradation</li>
+          <li><strong>Availability:</strong> 99.95% uptime with automated failover</li>
+          <li><strong>Test Coverage:</strong> 85% with continuous integration checks</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Deployment & DevOps</h2>
+        <p>Containerized with Docker and deployed on Kubernetes. CI/CD pipeline with GitHub Actions for automated testing and deployment. Blue-green deployment strategy for zero-downtime updates.</p>
+      </section>
+
+      <footer>
+        <p>Published: 2025-09-03 | <a href="https://github.com/mbonigaba/project-two" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Scroll reveal animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      if(!('IntersectionObserver' in window)) return;
+      
+      var reveals = document.querySelectorAll('section');
+      var io = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      
+      reveals.forEach(function(el){ 
+        el.classList.add('scroll-reveal');
+        io.observe(el); 
+      });
+    });
+  </script>

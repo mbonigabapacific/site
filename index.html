@@ -1,0 +1,1192 @@
+<!DOCTYPE HTML>
+<!--
+	MBONIGABA Pacific
+	mbonigabapacific.site.info | @mbonigaba
+	personal portfolio website 
+-->
+<html>
+	<head>
+		<!-- Title & basic description (replace if desired) -->
+		<title>Mbonigaba Pacific | Personal Website</title>
+		<meta name="description" content="Portfolio website of Mbonigaba Pacific showcasing web development, web design, and graphic design projects." />
+		<meta name="keywords" content="Mbonigaba Pacific, web development, web design, graphic design, portfolio" />
+		<meta name="author" content="Mbonigaba Pacific" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Google Site Verification (replace token if needed) -->
+		<meta name="google-site-verification" content="PfNXKP3ZrYzhZEleFm3y3m_BlQJTI9XDAYsX4rw5OAs" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Mbonigaba Pacific | Portfolio" />
+		<meta property="og:description" content="Portfolio website of Mbonigaba Pacific showcasing web development, web design, and graphic design projects." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mbonigabapacific.github.io/site/" />
+		<meta property="og:image" content="https://mbonigabapacific.github.io/site/img/me.jpg" />
+		<link rel="canonical" href="https://mbonigabapacific.github.io/site/" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Mbonigaba Pacific | Portfolio" />
+		<meta name="twitter:description" content="Portfolio website of Mbonigaba Pacific showcasing web development, web design, and graphic design projects." />
+		<meta name="twitter:image" content="https://mbonigabapacific.github.io/site/img/me.jpg" />
+		<meta name="twitter:site" content="@mbonigabapacifc" />
+
+		<!-- PWA / Mobile Theme Colors -->
+		<meta name="theme-color" content="#FF8800" id="theme-color-meta" />
+		<meta name="msapplication-navbutton-color" content="#FF8800" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- Favicon & Manifest (ensure files exist at these paths) -->
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+		<link rel="manifest" href="favicon_io/site.webmanifest" />
+
+		<!-- Fonts & CSS: keep Google Fonts and template CSS; removed Bootstrap & Font Awesome to avoid conflicts -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<!-- Added Rajdhani as primary font -->
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- Performance hints -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" href="assets/css/main.css" as="style">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Additional structured data for projects & testimonials -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@graph": [
+			{
+			  "@type": "Person",
+			  "name": "Mbonigaba Pacific",
+			  "url": "https://mbonigabapacific.github.io/site/",
+			  "image": "https://mbonigabapacific.github.io/site/img/me.jpg",
+			  "sameAs": [
+				"https://www.linkedin.com/in/mbonigabapacifc",
+				"https://github.com/mbonigabapacific",
+				"https://twitter.com/@mbonigabapac"
+			  ],
+			  "jobTitle": "Web Developer & Designer",
+			  "worksFor": {
+				"@type": "Organization",
+				"name": "Freelance"
+			  }
+			},
+			{
+			  "@type": "WebSite",
+			  "url": "https://mbonigabapacific.github.io/site/",
+			  "name": "Mbonigaba Pacific | Portfolio",
+			  "publisher": {
+				"@type": "Person",
+				"name": "Mbonigaba Pacific"
+			  },
+			  "potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://mbonigabapacific.github.io/site/?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			  }
+			},
+			{
+			  "@type": "CreativeWork",
+			  "name": "Project 1: Personal Portfolio Website",
+			  "url": "https://mbonigabapacific.github.io/site/projects/project1.html",
+			  "description": "A responsive personal portfolio website built with HTML, CSS, and JavaScript.",
+			  "image": "https://mbonigabapacific.github.io/site/img/project1.jpg",
+			  "author": {
+				"@type": "Person",
+				"name": "Mbonigaba Pacific"
+			  },
+			  "datePublished": "2025-09-03",
+			  "keywords": "portfolio, web development, HTML, CSS, JavaScript",
+			  "about": [
+				{ "@type": "Thing", "name": "HTML" },
+				{ "@type": "Thing", "name": "CSS" },
+				{ "@type": "Thing", "name": "JavaScript" }
+			  ]
+			},
+			{
+			  "@type": "CreativeWork",
+			  "name": "Project 2: Graphic Design Showcase",
+			  "url": "https://mbonigabapacific.github.io/site/projects/project2.html",
+			  "description": "A showcase of graphic design projects using Photoshop and Illustrator.",
+			  "image": "https://mbonigabapacific.github.io/site/img/project2.jpg",
+			  "author": {
+				"@type": "Person",
+				"name": "Mbonigaba Pacific"
+			  },
+			  "datePublished": "2025-09-03",
+			  "keywords": "portfolio, graphic design, Photoshop, Illustrator",
+			  "about": [
+				{ "@type": "Thing", "name": "Photoshop" },
+				{ "@type": "Thing", "name": "Illustrator" }
+			  ]
+			},
+			{
+			  "@type": "ItemList",
+			  "name": "Featured Projects",
+			  "itemListElement": [
+				{
+				  "@type": "ListItem",
+				  "position": 1,
+				  "item": {
+					"@type": "CreativeWork",
+					"name": "Project One — Todo App",
+					"description": "Todo app with offline sync and auth",
+					"url": "https://mbonigabapacific.github.io/site/projects/project1.html"
+				  }
+				}
+			  ]
+			},
+			{
+			  "@type": "Review",
+			  "author": "Client Name",
+			  "reviewBody": "Delivered quickly with excellent code and clear communication.",
+			  "itemReviewed": {
+				"@type": "Person",
+				"name": "Mbonigaba Pacific"
+			  }
+			}
+		  ]
+		}
+		</script>
+
+		<!-- Responsive viewport for mobile (added) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Small mobile-friendly image fixes (added) -->
+		<style>
+			/* Make images responsive by default */
+			img {
+				max-width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			/* Use Rajdhani as primary site font, fallbacks kept */
+			body {
+				font-family: 'Rajdhani', 'Poppins', 'Raleway', sans-serif;
+			}
+
+			/* Hero/profile link image: allow taller presentation, crop nicely */
+			.jumplink.pic img,
+			.pic img {
+				width: 100%;
+				height: auto;
+				min-height: 400px;       /* minimum visible height */
+				max-height: 80vh;        /* allow taller on desktop */
+				object-fit: cover;      /* crop to fill without distortion */
+				border-radius: 6px;
+				display: block;
+			}
+
+			/* Profile image link wrapper */
+			.jumplink.pic {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				border-radius: 6px;
+				margin-top: 1.5rem;
+				opacity: 0;
+				transform: translateY(18px);
+				transition: opacity 650ms ease, transform 650ms ease;
+				width: 100%;
+				min-height: 400px;
+			}
+
+			.jumplink.pic.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.jumplink.pic picture {
+				display: block;
+				width: 100%;
+				height: 100%;
+				min-height: 400px;
+			}
+
+			.jumplink.pic picture img {
+				width: 100%;
+				height: 100%;
+				min-height: 400px;
+				object-fit: cover;
+			}
+
+			/* Project thumbnails: consistent height and cover */
+			figure.image.fit img {
+				width: 100%;
+				height: 220px;          /* default thumbnail height */
+				object-fit: cover;
+			}
+
+			/* Nav: allow wrapping to avoid horizontal scrollbar and keep good layout */
+			#nav {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				gap: 0.6rem;
+				white-space: nowrap;
+				overflow-x: visible;
+				-webkit-overflow-scrolling: auto;
+				padding: 0.75rem 1rem;     /* slightly larger container padding */
+				background: transparent;
+				position: relative;
+				width: 100%;
+				z-index: 1000;
+			}
+
+			#nav a {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 1.4rem 1.8rem;      /* even larger touch target */
+				color: inherit;
+				text-decoration: none;
+				font-size: 1.45rem;       /* larger nav text */
+				white-space: nowrap;
+				border-radius: 8px;
+				flex: 0 1 auto;
+				min-width: 0;
+			}
+
+			/* Larger icons so text + icon balance visually */
+			#nav a .icon,
+			#nav a .icon.solid,
+			#nav a .icon.brands {
+				font-size: 1.8rem;        /* larger icon size */
+				line-height: 1;
+			}
+
+			/* Hide scrollbars as a fallback */
+			#nav::-webkit-scrollbar { display: none; }
+			#nav { -ms-overflow-style: none; scrollbar-width: none; }
+
+			/* Smaller screens: keep comfortable but slightly reduced */
+			@media (max-width: 768px) {
+				.jumplink.pic img,
+				.pic img { 
+					min-height: 350px;
+					max-height: 70vh; 
+				}
+				.jumplink.pic {
+					min-height: 350px;
+				}
+				.jumplink.pic picture {
+					min-height: 350px;
+				}
+				figure.image.fit img { height: 180px; }
+				body { -webkit-font-smoothing: antialiased; }
+
+				#nav {
+					justify-content: center;
+					padding: 0.5rem 0.6rem;
+					gap: 0.5rem;
+				}
+				#nav a {
+					padding: 0.7rem 0.9rem;
+					font-size: 1.05rem;    /* slightly smaller on narrow screens */
+				}
+				#nav a .icon,
+				#nav a .icon.solid,
+				#nav a .icon.brands {
+					font-size: 1.25rem;
+				}
+			}
+
+			/* New: Skills bars */
+			.skills {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			.skill {
+				background: rgba(0,0,0,0.03);
+				padding: 0.6rem;
+				border-radius: 8px;
+			}
+			.skill .label { font-weight:600; margin-bottom:0.35rem; display:block; }
+			.skill .bar {
+				height: 10px;
+				background: rgba(0,0,0,0.08);
+				border-radius: 6px;
+				overflow:hidden;
+			}
+			.skill .bar > i {
+				display:block;
+				height:100%;
+				width:0%;
+				background: linear-gradient(90deg,#FF8800,#FFB366);
+				border-radius:6px;
+				transition: width 900ms ease;
+			}
+
+			/* Featured projects grid */
+			.projects-grid {
+				display:grid;
+				grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+				gap:1rem;
+				margin-top:1rem;
+			}
+			.project-card {
+				background: #fff;
+				border-radius:8px;
+				overflow:hidden;
+				box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+			}
+			.project-card img { width:100%; height:160px; object-fit:cover; display:block; }
+			.project-card .meta { padding:0.8rem; }
+			.project-card .meta h4 { margin:0 0 .35rem 0; font-size:1.05rem; }
+			.project-card .meta p { margin:0 0 .6rem 0; font-size:0.95rem; color:#444; }
+
+			/* Testimonials */
+			.testimonials { margin:1.5rem 0; display:grid; gap:1rem; }
+			.testimonial { padding:1rem; background:rgba(0,0,0,0.03); border-radius:8px; }
+			.testimonial .who { font-weight:700; font-size:0.95rem; margin-bottom:0.25rem; }
+
+			/* Project modal (lightweight) */
+			.project-modal {
+				position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+				background:rgba(0,0,0,0.5); z-index:2000; padding:1rem;
+			}
+			.project-modal .panel {
+				background:#fff; max-width:900px; width:100%; border-radius:8px; overflow:auto;
+				max-height:90vh; padding:1rem;
+			}
+			.project-modal .panel .close { float:right; cursor:pointer; font-size:1.2rem; border:none; background:none; }
+
+			/* Small helpers */
+			.btn-inline { display:inline-block; padding:.4rem 0.7rem; border-radius:6px; background:#FF8800; color:#fff; text-decoration:none; font-weight:600; font-size:0.85rem; transition: all 0.3s ease; margin: 0.2rem; }
+			.btn-inline:hover { background:#FF9922; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255,136,0,0.3); }
+
+			/* Skip link (for keyboard users) */
+			.skip-link {
+				position: absolute;
+				left: -999px;
+				top: auto;
+				overflow: hidden;
+			}
+			.skip-link:focus {
+				position: static;
+				left: 10px;
+				top: 10px;
+				width: auto;
+				height: auto;
+				clip: auto;
+				overflow: visible;
+				background: rgba(255,255,255,0.9);
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+				z-index: 10000;
+			}
+
+			/* New styles for improved Home and About sections */
+			/* Home / intro */
+			.intro header {
+				text-align: center;
+				padding: 2rem 1rem;
+			}
+			.intro .lead {
+				font-size: 1.2rem;
+				margin: 1rem 0;
+				color: #333;
+			}
+			.intro ul {
+				display: flex;
+				justify-content: center;
+				gap: 1.5rem;
+				list-style: none;
+				padding: 0;
+				margin: 1.5rem 0 0 0;
+			}
+			.intro ul li {
+				font-weight: 500;
+				color: #555;
+			}
+
+			/* About section */
+			#about header {
+				text-align: center;
+				padding: 2rem 1rem;
+			}
+			#about .lead {
+				font-size: 1.1rem;
+				margin: 1rem 0;
+				color: #333;
+			}
+			#about h3 {
+				margin-top: 1.5rem;
+				font-size: 1.2rem;
+				color: #FF8800;
+			}
+			#about ul {
+				margin: 1rem 0;
+				padding-left: 1.5rem;
+			}
+			#about ul li {
+				margin-bottom: 0.8rem;
+				position: relative;
+				padding-left: 1.2rem;
+			}
+			#about ul li:before {
+				content: '✓';
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: #FF8800;
+				font-weight: 700;
+			}
+			#about section {
+				margin-bottom: 2rem;
+				animation: slideInLeft 0.8s ease;
+			}
+
+			/* Advanced animations */
+			@keyframes slideInLeft {
+				from { opacity: 0; transform: translateX(-30px); }
+				to { opacity: 1; transform: translateX(0); }
+			}
+
+			@keyframes slideInRight {
+				from { opacity: 0; transform: translateX(30px); }
+				to { opacity: 1; transform: translateX(0); }
+			}
+
+			@keyframes fadeInScale {
+				from { opacity: 0; transform: scale(0.95); }
+				to { opacity: 1; transform: scale(1); }
+			}
+
+			@keyframes bounceIn {
+				0% { opacity: 0; transform: scale(0.9) translateY(10px); }
+				50% { transform: scale(1.05); }
+				100% { opacity: 1; transform: scale(1) translateY(0); }
+			}
+
+			#about h3 {
+				animation: slideInRight 0.6s ease;
+				position: relative;
+				padding-bottom: 0.5rem;
+			}
+
+			#about h3:before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: 3px;
+				background: #FF8800;
+				animation: expandWidth 0.8s ease 0.3s forwards;
+			}
+
+			@keyframes expandWidth {
+				to { width: 100%; }
+			}
+
+			#about ul li {
+				animation: slideInLeft 0.6s ease;
+				animation-fill-mode: both;
+			}
+
+			#about ul li:nth-child(1) { animation-delay: 0.1s; }
+			#about ul li:nth-child(2) { animation-delay: 0.2s; }
+			#about ul li:nth-child(3) { animation-delay: 0.3s; }
+			#about ul li:nth-child(4) { animation-delay: 0.4s; }
+			#about ul li:nth-child(5) { animation-delay: 0.5s; }
+
+			.experience-card {
+				background: linear-gradient(135deg, rgba(255,136,0,0.1) 0%, rgba(255,136,0,0.05) 100%);
+				border-left: 4px solid #FF8800;
+				padding: 1.2rem;
+				margin: 1rem 0;
+				border-radius: 6px;
+				animation: fadeInScale 0.7s ease;
+				transition: all 0.3s ease;
+			}
+
+			.experience-card:hover {
+				transform: translateX(10px);
+				box-shadow: 0 6px 16px rgba(255,136,0,0.15);
+			}
+
+			.education-card {
+				background: #f8f9fa;
+				border-radius: 8px;
+				padding: 1.2rem;
+				margin: 1rem 0;
+				animation: bounceIn 0.8s ease;
+				transition: all 0.3s ease;
+				border: 2px solid transparent;
+			}
+
+			.education-card:hover {
+				border-color: #FF8800;
+				box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+			}
+
+			.timeline {
+				position: relative;
+				padding: 1rem 0 1rem 2rem;
+			}
+
+			.timeline:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: linear-gradient(180deg, #FF8800 0%, rgba(255,136,0,0.3) 100%);
+			}
+
+			.timeline-item {
+				position: relative;
+				margin-bottom: 2rem;
+				animation: slideInLeft 0.6s ease;
+			}
+
+			.timeline-item:before {
+				content: '';
+				position: absolute;
+				left: -28px;
+				top: 6px;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: #FF8800;
+				border: 3px solid white;
+				box-shadow: 0 0 0 3px #FF8800;
+				transition: all 0.3s ease;
+			}
+
+			.timeline-item:hover:before {
+				width: 18px;
+				height: 18px;
+				left: -31px;
+				top: 3px;
+			}
+
+			/* Scroll reveal animations */
+			.scroll-reveal {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 0.8s ease, transform 0.8s ease;
+			}
+
+			.scroll-reveal.in-view {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			/* Entrance animation helpers */
+			.fade-in {
+				opacity: 0;
+				transform: translateY(6px);
+				transition: opacity 550ms ease, transform 550ms ease;
+			}
+			.fade-in.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.fade-up {
+				opacity: 0;
+				transform: translateY(18px);
+				transition: opacity 650ms ease, transform 650ms ease;
+			}
+			.fade-up.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			/* Slight delay helper if you want to tune globally */
+			.delay-1 { transition-delay: 180ms; }
+			.delay-2 { transition-delay: 350ms; }
+			.delay-3 { transition-delay: 520ms; }
+		</style>
+	</head>
+	<body class="is-preload">
+		<!-- Skip link for keyboard users -->
+		<a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;overflow:hidden;" onfocus="this.style.left='10px';this.style.top='10px';">Skip to content</a>
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav" role="navigation" aria-label="Primary navigation">
+						<a href="#" class="icon solid fa-home" aria-label="Home"><span>Home</span></a>
+						<a href="#about" class="icon solid fa-user" aria-label="About"><span>About</span></a>
+						<a href="#work" class="icon solid fa-folder" aria-label="Projects"><span>Projects</span></a>
+						<a href="#contact" class="icon solid fa-envelope" aria-label="Contact"><span>Contact</span></a>
+						<a href="https://twitter.com/mbonigabapac" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span>Twitter</span></a>
+						<a href="https://github.com/mbonigabapacific" class="icon brands fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span>GitHub</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me (HOME) — replaced hero block with stronger content + CTAs -->
+						<article id="home" class="panel intro">
+							<header>
+								<!-- Name and career should use fade-in classes and be targeted by JS -->
+								<h1 id="hero-name" class="fade-in">MBONIGABA Pacific</h1>
+								<p id="hero-career" class="lead fade-in delay-1">Full‑stack Software Developer building scalable web apps and delightful user experiences.</p>
+
+								<!-- Tagline (typed) kept but hidden until name+career visible -->
+								<p id="tagline" data-phrases='["Software Developer — Full‑stack (JavaScript • Python • Cloud)","Web Developer • Designer","Open-source • AWS • GCP"]' class="fade-in delay-2">
+									<span id="typed" aria-live="polite"></span>
+								</p>
+
+								<!-- CTAs -->
+								<div id="hero-ctas" class="fade-up delay-3" style="margin-top:.75rem; display:flex; gap:.6rem; flex-wrap:wrap;">
+									<a href="#contact" class="btn-inline" aria-label="Hire me">Hire me</a>
+									<a href="assets/resume.pdf" class="btn-inline" aria-label="Download resume" target="_blank" rel="noopener">Download Resume (PDF)</a>
+									<a href="#work" class="btn-inline" aria-label="See projects">See Projects</a>
+								</div>
+							</header>
+
+							<!-- profile image kept but slightly annotated -->
+							<a href="#work" class="jumplink pic fade-up delay-3" aria-hidden="false">
+								<span class="arrow icon solid fa-chevron-right"><span>See my projects</span></span>
+
+								<!-- Use picture with WebP + JPG fallback; update path to img/me.* -->
+								<picture>
+									<source type="image/webp" srcset="images/me.jpg 1x">
+									<img src="images/me.jpg" alt="MBONIGABA Pacific — developer photo" loading="lazy" style="width:100%; border-radius:6px; object-fit:cover;">
+								</picture>
+							</a>
+						</article>
+
+						<!-- About — expanded content with services, availability, and highlights -->
+						<article id="about" class="panel">
+							<header>
+								<h2>About Me</h2>
+								<p class="lead">I'm a passionate full-stack software developer with a focus on building scalable, user-centric web applications. I combine technical expertise with creative problem-solving to deliver exceptional results.</p>
+							</header>
+
+							<!-- Professional Summary -->
+							<section class="scroll-reveal">
+								<h3>Professional Summary</h3>
+								<p>With 5+ years of experience in web development, I specialize in creating end-to-end solutions that solve real business problems. I'm driven by clean code, continuous learning, and delivering value through technology.</p>
+							</section>
+
+							<!-- What I Do -->
+							<section class="scroll-reveal">
+								<h3>What I Do</h3>
+								<ul>
+									<li><strong>Full-Stack Web Apps:</strong> React / Next.js frontends with Node.js / Express backends, deployed and monitored in production.</li>
+									<li><strong>API Development:</strong> RESTful and GraphQL APIs, tested and documented, with proper authentication and rate-limiting.</li>
+									<li><strong>Cloud & DevOps:</strong> CI/CD pipelines, containerization with Docker, deployments on AWS/GCP, monitoring and logging.</li>
+									<li><strong>UI/UX Design:</strong> Prototyping in Figma, accessible implementations, responsive designs for all devices.</li>
+								</ul>
+							</section>
+
+							<!-- Experience -->
+							<section class="scroll-reveal">
+								<h3>Experience</h3>
+								<div class="timeline">
+									<div class="timeline-item">
+										<div class="experience-card">
+											<h5 class="mb-2">Freelance Full-Stack Developer</h5>
+											<p class="text-muted mb-1"><small>2021 – Present</small></p>
+											<p>Building custom web applications for startups and SMEs. Delivered production features with CI/CD pipelines, monitoring, and 99.9% uptime. Tech: React, Node.js, MongoDB, AWS.</p>
+										</div>
+									</div>
+									<div class="timeline-item">
+										<div class="experience-card">
+											<h5 class="mb-2">Frontend Engineer</h5>
+											<p class="text-muted mb-1"><small>2019 – 2021 | Example Co.</small></p>
+											<p>Focused on UX improvements and performance optimization. Built reusable component libraries, improved Core Web Vitals by 40%. Tech: React, TypeScript, Jest.</p>
+										</div>
+									</div>
+									<div class="timeline-item">
+										<div class="experience-card">
+											<h5 class="mb-2">Junior Web Developer</h5>
+											<p class="text-muted mb-1"><small>2018 – 2019 | Tech Startup</small></p>
+											<p>Started my career building responsive websites and landing pages. Learned HTML/CSS/JavaScript fundamentals and Git workflows. Tech: HTML, CSS, jQuery.</p>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<!-- Education & Certifications -->
+							<section class="scroll-reveal">
+								<h3>Education & Certifications</h3>
+								<div class="education-card">
+									<h5 class="mb-2">AWS Certified Solutions Architect</h5>
+									<p class="text-muted mb-1"><small>2023</small></p>
+									<p class="mb-0">Professional-level certification in designing and deploying scalable AWS infrastructure.</p>
+								</div>
+								<div class="education-card">
+									<h5 class="mb-2">Bachelor of Science in Computer Science</h5>
+									<p class="text-muted mb-1"><small>2018 | University Name</small></p>
+									<p class="mb-0">Focus on software engineering, data structures, and computer networks.</p>
+								</div>
+								<div class="education-card">
+									<h5 class="mb-2">Google Cloud Fundamentals</h5>
+									<p class="text-muted mb-1"><small>2022</small></p>
+									<p class="mb-0">Completed comprehensive cloud engineering certification.</p>
+								</div>
+							</section>
+
+							<!-- Skills Breakdown -->
+							<section class="scroll-reveal">
+								<h3>Core Competencies</h3>
+								<div class="row g-3">
+									<div class="col-md-6">
+										<h6 class="fw-bold mb-3">Frontend</h6>
+										<p><small>React • Next.js • TypeScript • Tailwind CSS • Material-UI • Testing (Jest, React Testing Library)</small></p>
+									</div>
+									<div class="col-md-6">
+										<h6 class="fw-bold mb-3">Backend</h6>
+										<p><small>Node.js • Express • Python • GraphQL • REST APIs • PostgreSQL • MongoDB</small></p>
+									</div>
+									<div class="col-md-6">
+										<h6 class="fw-bold mb-3">DevOps & Cloud</h6>
+										<p><small>Docker • AWS • GCP • CI/CD (GitHub Actions, Jenkins) • Linux • Kubernetes basics</small></p>
+									</div>
+									<div class="col-md-6">
+										<h6 class="fw-bold mb-3">Tools & Other</h6>
+										<p><small>Git • Figma • Agile/Scrum • Jira • VS Code • Postman • Firebase</small></p>
+									</div>
+								</div>
+							</section>
+
+							<!-- Availability -->
+							<section class="scroll-reveal">
+								<h3>Availability & Rates</h3>
+								<div class="alert alert-info border-start border-4" role="alert">
+									<strong>Open for opportunities!</strong> I'm available for freelance projects, contract work, and full-time positions. Typical project engagements range from 4–12 weeks. <a href="#contact" class="alert-link">Let's discuss your project</a>.
+								</div>
+							</section>
+
+							<!-- Call to Action -->
+							<section class="scroll-reveal">
+								<h3>Let's Connect</h3>
+								<p>Interested in working together? I'd love to hear about your project or collaboration idea. <strong><a href="#contact" style="color:#FF8800; text-decoration:none;">Get in touch</a></strong> — I typically respond within 24–48 hours.</p>
+								<div class="mt-3">
+									<a href="https://linkedin.com/in/mbonigaba" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm me-2">LinkedIn</a>
+									<a href="https://github.com/mbonigabapacific" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm me-2">GitHub</a>
+									<a href="https://twitter.com/mbonigabapac" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">Twitter</a>
+								</div>
+							</section>
+						</article>
+
+						<!-- Skills section (new) -->
+<section id="skills" class="panel">
+	<header><h2>Skills</h2></header>
+	<div class="skills" aria-hidden="false">
+		<div class="skill" aria-label="Frontend - 90%">
+			<span class="label">Frontend — React, HTML, CSS</span>
+			<div class="bar"><i data-pct="90" style="width:0%"></i></div>
+		</div>
+		<div class="skill" aria-label="Backend - 80%">
+			<span class="label">Backend — Node.js, Express, MongoDB</span>
+			<div class="bar"><i data-pct="80" style="width:0%"></i></div>
+		</div>
+		<div class="skill" aria-label="Cloud - 75%">
+			<span class="label">Cloud & DevOps — AWS, GCP, Docker</span>
+			<div class="bar"><i data-pct="75" style="width:0%"></i></div>
+		</div>
+		<div class="skill" aria-label="Design - 70%">
+			<span class="label">Design — Figma, Photoshop</span>
+			<div class="bar"><i data-pct="70" style="width:0%"></i></div>
+		</div>
+	</div>
+</section>
+
+						<!-- Work -> Projects -->
+							<article id="work" class="panel">
+								<header>
+									<h2>Projects</h2>
+								</header>
+								<p>
+									A selection of projects — click an image or link to view the repo or demo.
+								</p>
+								<section>
+									<div class="projects-grid" aria-live="polite">
+										<!-- Example project card; duplicate/update for each project -->
+										<article class="project-card fade-up" data-project='{"title":"Project One","desc":"Todo app with offline sync","tech":"React • Express • MongoDB","img":"images/pic01.jpg","repo":"https://github.com/mbonigaba/project-one","live":"projects/project-one.html"}' tabindex="0">
+											<img loading="lazy" src="images/pic01.jpg" alt="Project One screenshot">
+											<div class="meta">
+												<h4>Project One — Todo App</h4>
+												<p>Todo app with offline sync, auth and REST API.</p>
+												<p class="tags">Tech: <small>React</small>, <small>Node.js</small></p>
+												<a class="btn-inline" href="projects/project-one.html" aria-label="Open Project One page">View</a>
+												<a class="btn-inline" href="https://github.com/mbonigaba/project-one" target="_blank" rel="noopener noreferrer">Repo</a>
+											</div>
+										</article>
+
+										<!-- Project Two -->
+										<article class="project-card fade-up" data-project='{"title":"Project Two","desc":"API service with rate-limiting","tech":"Node.js • Express","img":"images/pic02.jpg","repo":"https://github.com/mbonigaba/project-two","live":"projects/project-two.html"}' tabindex="0">
+											<img loading="lazy" src="images/pic02.jpg" alt="Project Two screenshot">
+											<div class="meta">
+												<h4>Project Two — API Service</h4>
+												<p>Scalable REST API with observability and tests.</p>
+												<p class="tags">Tech: <small>Node.js</small>, <small>MongoDB</small></p>
+												<a class="btn-inline" href="projects/project-two.html" aria-label="Open Project Two page">View</a>
+												<a class="btn-inline" href="https://github.com/mbonigaba/project-two" target="_blank" rel="noopener noreferrer">Repo</a>
+											</div>
+										</article>
+
+										<!-- Project Three -->
+										<article class="project-card fade-up" data-project='{"title":"Project Three","desc":"Live demo project","tech":"Vanilla JS • CSS","img":"images/pic03.jpg","repo":"https://github.com/mbonigaba/project-three","live":"projects/project-three.html"}' tabindex="0">
+											<img loading="lazy" src="images/pic03.jpg" alt="Project Three screenshot">
+											<div class="meta">
+												<h4>Project Three — Live Demo</h4>
+												<p>Interactive demo showcasing responsive UI and client-side techniques.</p>
+												<p class="tags">Tech: <small>Vanilla JS</small>, <small>CSS</small></p>
+												<a class="btn-inline" href="projects/project-three.html" aria-label="Open Project Three page">View</a>
+												<a class="btn-inline" href="https://github.com/mbonigaba/project-three" target="_blank" rel="noopener noreferrer">Repo</a>
+											</div>
+										</article>
+									</div>
+
+									<div style="margin-top:1rem; text-align:center;">
+										<button id="load-more-projects" class="btn-inline" type="button">Load more projects</button>
+									</div>
+								</section>
+							</article>
+
+						<!-- Testimonials section (new) -->
+<section id="testimonials" class="panel">
+	<header><h2>Testimonials</h2></header>
+	<div class="testimonials">
+		<div class="testimonial">
+			<div class="who">Client Name — Company</div>
+			<div class="quote">"Delivered quickly with excellent code and clear communication."</div>
+		</div>
+		<div class="testimonial">
+			<div class="who">Colleague — Org</div>
+			<div class="quote">"Great collaborator and problem solver."</div>
+		</div>
+	</div>
+</section>
+
+						<!-- Contact -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>Contact Me</h2>
+								</header>
+								<!-- Updated contact form: replace FORM_ID with your Formspree id or change action to your backend -->
+								<form id="contact-form" action="https://formspree.io/f/myzrlpgl" method="POST" validate>
+									<!-- honeypot field (hide from users but bots may fill) -->
+									<input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off">
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<input type="text" name="name" placeholder="Name" required />
+											</div>
+											<div class="col-6 col-12-medium">
+												<input type="email" name="email" placeholder="Email" required />
+											</div>
+											<div class="col-12">
+												<input type="text" name="subject" placeholder="Subject" required />
+											</div>
+											<div class="col-12">
+												<textarea name="message" placeholder="Message" rows="6" required></textarea>
+											</div>
+
+											<!-- Formspree hidden fields and fallback -->
+											<input type="hidden" name="_subject" value="New message from portfolio site" />
+											<input type="hidden" name="_replyto" value="" />
+											<div class="col-12">
+												<input type="submit" value="Send Message" />
+											</div>
+										</div>
+									</div>
+								</form>
+
+								<!-- Accessible success message -->
+								<div id="contact-success" role="status" aria-live="polite" style="display:none; margin-top:1rem;">
+									<p>Thanks — your message has been sent. I'll get back to you soon.</p>
+								</div>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; All Right Reserved.</li><li>Design: <a href="#"> DEV - MBONIGABA Pacific</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Project modal markup (near end of body, before scripts) -->
+		<div id="project-modal" class="project-modal" role="dialog" aria-hidden="true">
+			<div class="panel" role="document">
+				<button class="close" id="project-modal-close" aria-label="Close">&times;</button>
+				<h3 id="pm-title"></h3>
+				<img id="pm-img" src="" alt="" style="width:100%;max-height:300px;object-fit:cover;border-radius:6px;margin-bottom:.6rem">
+				<p id="pm-desc"></p>
+				<p><strong>Tech:</strong> <span id="pm-tech"></span></p>
+				<p><a id="pm-live" class="btn-inline" href="#" target="_blank" rel="noopener">Live</a> <a id="pm-repo" class="btn-inline" href="#" target="_blank" rel="noopener">Repo</a></p>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Typewriter: simple, lightweight auto-writing + loop -->
+			<script>
+				(function(){
+					var el = document.getElementById('typed');
+					var wrapper = document.getElementById('tagline');
+					if(!el || !wrapper) return;
+					var phrases = [];
+					try { phrases = JSON.parse(wrapper.getAttribute('data-phrases')); } catch(e) { phrases = [wrapper.textContent.trim()]; }
+					var typingSpeed = 50;      // ms per char
+					var deleteSpeed = 30;      // ms per char when deleting
+					var pauseDelay = 1600;     // ms between typed phrases
+					var idx = 0, char = 0, deleting = false;
+					function tick() {
+						var str = phrases[idx % phrases.length];
+						if(!deleting) {
+							el.textContent = str.slice(0, ++char);
+							if(char === str.length) { deleting = true; setTimeout(tick, pauseDelay); return; }
+							setTimeout(tick, typingSpeed);
+						} else {
+							el.textContent = str.slice(0, --char);
+							if(char === 0) { deleting = false; idx++; setTimeout(tick, 300); return; }
+							setTimeout(tick, deleteSpeed);
+							
+						}
+					}
+					// start after small delay so page render is smooth
+					setTimeout(tick, 600);
+				})();
+			</script>
+
+			<!-- Advanced JS: IntersectionObserver for skills + reveal, Load more placeholder, modal focus management, improved form handling -->
+<script>
+	// Animate skill bars using IntersectionObserver (better than onload)
+	(function(){
+		var bars = document.querySelectorAll('.skill .bar > i');
+		if('IntersectionObserver' in window && bars.length){
+			var io = new IntersectionObserver(function(entries, obs){
+				entries.forEach(function(entry){
+					if(entry.isIntersecting){
+						var i = entry.target.querySelector('.bar > i');
+						if(i){
+							var pct = parseInt(i.getAttribute('data-pct')||0,10);
+							i.style.width = pct + '%';
+						}
+						obs.unobserve(entry.target);
+					}
+				});
+			},{threshold:0.25});
+			document.querySelectorAll('.skill').forEach(function(el){ io.observe(el); });
+		} else {
+			// fallback
+			window.addEventListener('load', function(){ bars.forEach(function(i){ i.style.width = (i.getAttribute('data-pct')||0)+'%'; }); });
+		}
+	})();
+
+	// Reveal project cards on scroll
+	(function(){
+		var cards = document.querySelectorAll('.project-card');
+		if('IntersectionObserver' in window && cards.length){
+			var io2 = new IntersectionObserver(function(entries, obs){
+				entries.forEach(function(entry){
+					if(entry.isIntersecting){
+						entry.target.classList.add('revealed');
+						obs.unobserve(entry.target);
+					}
+				});
+			},{threshold:0.2});
+			cards.forEach(function(c){ io2.observe(c); });
+		}
+	})();
+
+	// Modal open/close + basic focus trap + restore focus
+	(function(){
+		var modal = document.getElementById('project-modal');
+		var closeBtn = document.getElementById('project-modal-close');
+		var focusableSelector = 'a[href], area[href], input:not([disabled]), button:not([disabled]), [tabindex="0"]';
+		var lastFocused = null;
+
+		function trapFocus(container){
+			var focusable = Array.prototype.slice.call(container.querySelectorAll(focusableSelector));
+			if(!focusable.length) return;
+			var first = focusable[0], last = focusable[focusable.length-1];
+			container.addEventListener('keydown', function(e){
+				if(e.key === 'Tab'){
+					if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+					else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+				}
+			});
+			first.focus();
+		}
+
+		function openProject(data){
+			if(!modal) return;
+			lastFocused = document.activeElement;
+			document.getElementById('pm-title').textContent = data.title || '';
+			document.getElementById('pm-img').src = data.img || '';
+			document.getElementById('pm-img').alt = (data.title||'')+' screenshot';
+			document.getElementById('pm-desc').textContent = data.desc || '';
+			document.getElementById('pm-tech').textContent = data.tech || '';
+			document.getElementById('pm-live').href = data.live || '#';
+			document.getElementById('pm-repo').href = data.repo || '#';
+			modal.style.display = 'flex';
+			modal.setAttribute('aria-hidden','false');
+			trapFocus(modal);
+		}
+		function closeProject(){
+			if(!modal) return;
+			modal.style.display = 'none';
+			modal.setAttribute('aria-hidden','true');
+			if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+		}
+
+		document.querySelectorAll('.project-card .project-open').forEach(function(btn){
+			btn.addEventListener('click', function(e){
+				e.preventDefault();
+				var card = btn.closest('.project-card');
+				if(!card) return;
+				var data = {};
+				try { data = JSON.parse(card.getAttribute('data-project')); } catch(e){ }
+				openProject(data);
+			});
+		});
+		if(closeBtn) closeBtn.addEventListener('click', closeProject);
+		if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeProject(); });
+		document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeProject(); });
+	})();
+
+	// Load more (placeholder) - you can change to fetch() real data or reveal hidden cards
+	(function(){
+		var btn = document.getElementById('load-more-projects');
+		if(!btn) return;
+		btn.addEventListener('click', function(){
+			alert('Load more projects: implement a fetch to your project list or reveal hidden project cards.');
+		});
+	})();
+
+	// Contact form: simple honeypot check and accessible success handling
+	(function(){
+		var form = document.getElementById('contact-form');
+		var success = document.getElementById('contact-success');
+		if(!form) return;
+		form.addEventListener('submit', function(e){
+			e.preventDefault();
+			// honeypot
+			if(form.querySelector('[name="website"]').value){
+				// likely bot
+				return;
+			}
+			var data = new FormData(form);
+			var action = form.getAttribute('action');
+			fetch(action, {
+				method: 'POST',
+				body: data,
+				headers: { 'Accept': 'application/json' }
+			}).then(function(response){
+				if(response.ok){
+					form.reset();
+					success.style.display = 'block';
+					success.focus && success.focus();
+				} else {
+					alert('Error sending message. Please try again.');
+				}
+			}).catch(function(){
+				alert('Network error. Please try again later.');
+			});
+		});
+	})();
+
+	// Orchestrator JS: first fade name+career, then start typewriter, then reveal other sections
+	document.addEventListener('DOMContentLoaded', function(){
+		// Fade-in name and career
+		var name = document.getElementById('hero-name');
+		var career = document.getElementById('hero-career');
+		var taglineWrapper = document.getElementById('tagline');
+		var ctas = document.getElementById('hero-ctas');
+		// show name then career
+		setTimeout(function(){ name && name.classList.add('visible'); }, 80);
+		setTimeout(function(){ career && career.classList.add('visible'); }, 300);
+		// after career visible, start typed tagline then reveal CTA & image
+		setTimeout(function(){
+			if(taglineWrapper) taglineWrapper.classList.add('visible');
+			// Auto-start reveal sequence after typing completes
+			setTimeout(function(){
+				// reveal ctas and profile image and the rest of main sections
+				ctas && ctas.classList.add('visible');
+				var jumpLink = document.querySelector('.jumplink.pic');
+				if(jumpLink) jumpLink.classList.add('visible');
+				// fade up main sections in sequence
+				var toReveal = document.querySelectorAll('#skills, #work, #testimonials, #contact');
+				toReveal.forEach(function(el, i){
+					setTimeout(function(){ el && el.classList.add('visible'); }, 700 + (i * 200));
+				});
+				// also reveal project cards
+				var cards = document.querySelectorAll('.project-card.fade-up');
+				cards.forEach(function(card, i){
+					setTimeout(function(){ card.classList.add('visible'); }, 900 + (i * 160));
+				});
+			}, 3500);
+		}, 800);
+	});
+
+	// Advanced scroll reveal animations for About section
+	(function(){
+		if(!('IntersectionObserver' in window)) return;
+		
+		var reveals = document.querySelectorAll('.scroll-reveal');
+		var io = new IntersectionObserver(function(entries, obs){
+			entries.forEach(function(entry){
+				if(entry.isIntersecting){
+					entry.target.classList.add('in-view');
+					obs.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+		
+		reveals.forEach(function(el){ io.observe(el); });
+	})();
+
+	// Smooth parallax scroll effect
+	(function(){
+		var aboutSection = document.getElementById('about');
+		if(!aboutSection) return;
+		
+		window.addEventListener('scroll', function(){
+			var scrollY = window.pageYOffset;
+			var sectionTop = aboutSection.offsetTop;
+			var windowHeight = window.innerHeight;
+			
+			if(scrollY + windowHeight > sectionTop && scrollY < sectionTop + aboutSection.offsetHeight){
+				var offset = (scrollY - sectionTop) * 0.5;
+				aboutSection.style.backgroundPosition = '0 ' + offset + 'px';
+			}
+		});
+	})();
+
+	// Bootstrap integration
+	document.addEventListener('DOMContentLoaded', function(){
+		// Initialize Bootstrap tooltips if needed
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+		tooltipTriggerList.map(function(tooltipTriggerEl){
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+	});
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

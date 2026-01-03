@@ -1,2 +1,2 @@
 # cw
-it is the class saving website
+it is my personal portifolio

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project Four — Library App Member Dashboard | Mbonigaba Pacific</title>
+  <meta name="description" content="A full-stack library management system built with Laravel, featuring a functional admin dashboard for member management, registration tracking, and user data operations." />
+  <meta name="keywords" content="Laravel, PHP, Blade, Admin Panel, Portfolio, Mbonigaba Pacific" />
+  <meta name="author" content="Mbonigaba Pacific" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="PfNXKP3ZrYzhZEleFm3y3m_BlQJTI9XDAYsX4rw5OAs" />
+  
+  <link rel="canonical" href="https://mbonigabapacific.github.io/site/projects/project-four.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Project Four — Library App Member Dashboard" />
+  <meta property="og:description" content="A full-stack library management system built with Laravel, featuring a functional admin dashboard for member management, registration tracking, and user data operations." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mbonigabapacific.github.io/site/projects/project-four.html" />
+  <meta property="og:image" content="https://mbonigabapacific.github.io/site/Screenshots/dashboard.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Four — Library App Member Dashboard" />
+  <meta name="twitter:description" content="A full-stack library management system built with Laravel, featuring a functional admin dashboard for member management, registration tracking, and user data operations." />
+  <meta name="twitter:image" content="https://mbonigabapacific.github.io/site/Screenshots/dashboard.png" />
+  <meta name="twitter:site" content="@mbonigabapac" />
+
+  <!-- PWA / Mobile Theme Colors -->
+  <meta name="theme-color" content="#FF8800" id="theme-color-meta" />
+  <meta name="msapplication-navbutton-color" content="#FF8800" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon_io/site.webmanifest" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Project page custom styles -->
+  <style>
+    body { font-family: 'Rajdhani', 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .panel { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); animation: slideInUp 0.8s ease; }
+    header { margin-bottom: 2rem; animation: fadeInDown 0.6s ease; }
+    h1 { color: #FF8800; font-size: 2.2rem; margin-bottom: 0.5rem; position: relative; padding-bottom: 0.5rem; }
+    h1:after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: #FF8800; animation: expandWidth 0.8s ease 0.3s forwards; }
+    .lead { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; line-height: 1.6; animation: fadeIn 0.8s ease 0.2s both; }
+    h2 { color: #333; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #FF8800; padding-bottom: 0.5rem; animation: slideInLeft 0.6s ease; }
+    section { margin-bottom: 1.5rem; animation: fadeInScale 0.7s ease; }
+    ul { margin-left: 1.5rem; }
+    li { margin-bottom: 0.8rem; line-height: 1.6; animation: slideInLeft 0.6s ease; animation-fill-mode: both; }
+    p { line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    picture { display: block; margin: 2rem 0; animation: fadeInScale 0.8s ease; }
+    img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+    img:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; color: #888; font-size: 0.95rem; animation: fadeIn 0.8s ease 0.5s both; }
+    .btn-inline { display: inline-block; padding: 0.55rem 0.95rem; border-radius: 6px; background: #FF8800; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; margin: 0.2rem; border: none; cursor: pointer; }
+    .btn-inline:hover { background: #FF9922; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255,136,0,0.3); }
+    .tech-tag { display: inline-block; background: rgba(255,136,0,0.1); color: #FF8800; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem 0.25rem 0.25rem 0; font-weight: 600; animation: bounceIn 0.6s ease; }
+  </style>
+
+</head>
+<body>
+  <main id="main">
+    <article class="panel">
+      <header>
+        <h1>Project Four — Library App Member Dashboard</h1>
+        <p class="lead">A full-stack library management system built with Laravel, featuring a functional admin dashboard for member management, registration tracking, and user data operations.</p>
+        <p>
+          <a href="../index.html" class="btn-inline">Back</a>
+        </p>
+      </header>
+
+      <section>
+        <picture>
+          <img src="../Screenshots/dashboard.png" alt="Project Four Screenshot" loading="lazy" style="width:100%; border-radius:8px; max-height:420px; object-fit:cover;">
+        </picture>
+      </section>
+
+      <section>
+        <h2>Overview</h2>
+        <p>This project is a Laravel-based web application developed for library administration. The dashboard serves as an internal tool for librarians to manage members, view registration details, and perform CRUD operations through a clean, table-driven interface. The backend is powered by Laravel’s MVC architecture, with Eloquent ORM managing member data.</p>
+      </section>
+
+      <section>
+        <h2>Key Features</h2>
+          <h5>Member Management Module</h5>
+          <p>Laravel-powered “Members” section with functionality to create, view, and report on library members.</p>
+          <h5>CRUD Operations with Laravel</h5>
+          <p>“Edit” actions in the table trigger Laravel controller methods to update member records in the database.</p>
+          <h5>Database-Driven Member Directory</h5>
+          <p>Table populated with data from a MySQL database, displaying: Member ID, Register ID, Member Name, Email ID, Action (Edit via Laravel routes).</p>
+           <h5>Blade Templating for UI</h5>
+          <p>Dashboard built with Laravel Blade for clean, reusable HTML components and dynamic data binding.</p>
+      </section>
+      
+      <section>
+        <h2>Visual & Content Design</h2>
+        <ul>
+            <li>Simple, structured Blade views with clear headings and table layouts.</li>
+            <li>Action links generated with Laravel’s route() or url() helpers.</li>
+            <li>Minimalist design focused on functionality and data clarity.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Tech Stack</h2>
+        <div>
+          <p><strong>Backend:</strong></p>
+          <span class="tech-tag">PHP 8.x</span>
+          <span class="tech-tag">Laravel 10.x</span>
+          <span class="tech-tag">Eloquent ORM</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <p style="margin-top: 1rem;"><strong>Frontend:</strong></p>
+        <div>
+            <span class="tech-tag">Blade Templates</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+        </div>
+        <p style="margin-top: 1rem;"><strong>Features:</strong></p>
+        <div>
+            <span class="tech-tag">MVC Architecture</span>
+            <span class="tech-tag">CRUD Operations</span>
+            <span class="tech-tag">Form Validation</span>
+            <span class="tech-tag">Routing</span>
+            <span class="tech-tag">Middleware</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Role & Impact</h2>
+        <ul>
+            <li>Developed full-stack Laravel application including models, controllers, migrations, and Blade views.</li>
+            <li>Implemented secure member data management with Laravel validation and authorization.</li>
+            <li>Designed efficient admin workflows with editable tables linked to Laravel backend.</li>
+            <li>Delivered a maintainable, scalable admin panel suitable for library staff.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Performance & Quality</h2>
+        <ul>
+            <li><strong>Database Efficiency:</strong> Eloquent queries optimized for member data retrieval.</li>
+            <li><strong>Security:</strong> Laravel middleware protects admin routes; form request validation ensures data integrity.</li>
+            <li><strong>Maintainability:</strong> Modular Blade components and Laravel’s structure enable easy updates.</li>
+            <li><strong>Usability:</strong> Clean table layout with quick edit actions reduces staff task time.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Lessons Learned</h2>
+        <p>This project highlighted the effectiveness of Laravel for building secure, data-driven admin tools. Using Blade templates with Eloquent models streamlined the display and management of relational data. For internal dashboards, combining Laravel’s robust backend with simple, functional frontends results in efficient, reliable systems that are easy to maintain and extend.</p>
+      </section>
+
+      <footer>
+        <p>Published: 2025-11-28</p>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

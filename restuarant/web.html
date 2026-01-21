@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenMind Restaurant | Gourmet Dining Experience</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    /* === BASE STYLES === */
+:root {
+    --primary: #ff6b6b; 
+    --primary-dark: #ff5252;
+    --secondary: #e67e22;
+    --dark: #333;
+    --light: #f9f9f9;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--light);
+    cursor: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Auto text animation */
+.auto-text {
+    font-size: 1.5em;
+    display: inline-block;
+    white-space: pre;
+    border-right: 3px solid #333;
+    padding-right: 5px;
+    color: var(--primary);
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+    margin-bottom: 30px;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary) }
+}
+
+/* === CUSTOM CURSOR SYSTEM === */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: 
+        width 0.3s ease,
+        height 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: 
+        width 0.4s ease,
+        height 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.cursor.active {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 107, 107, 0.5);
+}
+
+.cursor-follower.active {
+    width: 80px;
+    height: 80px;
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.cursor.click {
+    animation: cursorClick 0.5s forwards;
+}
+
+@keyframes cursorClick {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(0.7); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* === FOOD PARTICLE ANIMATION (OPTIMIZED) === */
+.food-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.food-item {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: floatUp linear infinite;
+    z-index: 1000;
+    will-change: transform, opacity;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) translateX(var(--offset-x)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* === HEADER WITH STICKY BEHAVIOR === */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 5vw;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+    transition: var(--transition);
+}
+
+.logo:hover img {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.open {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    color: #e67e22;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cart-icon, .user-icon {
+    width: 24px;
+    height: 24px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.cart-icon:hover, .user-icon:hover {
+    transform: translateY(-3px);
+    stroke: var(--primary);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* === HERO SECTION WITH PARALLAX === */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5vw;
+    position: relative;
+    overflow: hidden;
+    background: url('../images/hero/ads.jpg') no-repeat center center/cover;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    z-index: -1;
+    transition: background-color 0.5s ease;
+}
+
+.hero-content {
+    max-width: 800px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.hero-content.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 40px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* === MENU SECTIONS === */
+.section {
+    padding: 100px 5vw;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.section-title h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 15px;
+    color: var(--dark);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.section-title.visible h2,
+.section-title.visible p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.dish-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.dish-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dish-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dish-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.dish-card:hover .dish-image {
+    transform: scale(1.05);
+}
+
+.dish-info {
+    padding: 20px;
+}
+
+.dish-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.dish-price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.dish-description {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.add-to-cart {
+    padding: 12px;
+    width: 100%;
+    background: var(--primary);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+}
+
+.add-to-cart:hover {
+    background: var(--primary-dark);
+}
+
+.add-to-cart svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* === ABOUT SECTION === */
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* === GALLERY SECTION === */
+.gallery {
+    background-color: #f5f5f5;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    aspect-ratio: 1/1;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* === RESERVATIONS SECTION === */
+.reservation-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* === TESTIMONIALS === */
+.testimonials {
+    background-color: #f5f5f5;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+.author-info p {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* === CONTACT SECTION === */
+.contact-container {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--primary);
+    width: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.contact-map {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 400px;
+}
+
+/* === FOOTER === */
+.site-footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 80px 5vw 30px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-links li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.contact-info p {
+    color: #bbb;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--primary);
+    margin-top: 3px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.newsletter input[type="email"] {
+    padding: 12px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter input[type="email"]::placeholder {
+    color: #bbb;
+}
+
+.newsletter button {
+    padding: 12px 25px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.newsletter button:hover {
+    background-color: var(--primary-dark);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+/* === MOBILE MENU === */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    color: var(--dark);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: var(--transition);
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin-bottom: auto;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.mobile-menu ul li a:hover {
+    color: var(--primary);
+}
+
+.mobile-menu .header-actions {
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* === PRODUCT CONVEYOR === */
+.product-conveyor {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.menu-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.menu-title {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.menu-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+}
+
+.menu-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.menu-highlights {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-highlights li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-highlights i {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.cards-wrapper {
+    flex: 2;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.cards-container {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    transition: transform var(--transition) ease-in-out;
+}
+
+.product-card {
+    width: 280px;
+    height: 380px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-category {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.add-to-cart {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-height: 44px;
+}
+
+.add-to-cart:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.nav-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.8rem;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+    background: var(--secondary);
+    transform: scale(1.2);
+}
+
+/* === SCREEN READER UTILITY === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* === FOCUS STYLES === */
+button:focus, a:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+    }
+    
+    .product-conveyor {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .menu-content {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .menu-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .cards-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .section {
+        padding: 70px 5vw;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .product-card {
+        width: 260px;
+    }
+    
+    .menu-title {
+        font-size: 2rem;
+    }
+    
+    .dish-card {
+        padding: 15px;
+    }
+
+    .dish-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .dish-price {
+        font-size: 1rem;
+    }
+
+    .dish-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* === ANIMATION DELAYS === */
+.dish-card:nth-child(1) { transition-delay: 0.1s; }
+.dish-card:nth-child(2) { transition-delay: 0.2s; }
+.dish-card:nth-child(3) { transition-delay: 0.3s; }
+.dish-card:nth-child(4) { transition-delay: 0.4s; }
+.dish-card:nth-child(5) { transition-delay: 0.5s; }
+.dish-card:nth-child(6) { transition-delay: 0.6s; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Floating Food Background -->
+    <div class="food-container" id="foodContainer"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/LOGO13.svg" alt="OpenMind Restaurant Logo">
+                <p class="open">Open Mind Restaurant</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#signature-dishes" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="cart-icon-wrapper">
+                    <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </div>
+                <svg class="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#signature-dishes">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="header-actions">
+            <div class="cart-icon-wrapper">
+                <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count">0</span>
+            </div>
+            <svg class="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Experience Culinary Excellence</h1>
+            <div id="autoWrite" class="auto-text"></div>
+            <div class="hero-buttons">
+                <a href="#signature-dishes" class="btn">View Menu</a>
+                <a href="#reservations" class="btn btn-outline">Reserve Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dishes -->
+    <section class="section" id="signature-dishes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Signature Dishes</h2>
+                <p>Each dish is a masterpiece crafted by our award-winning chefs using only the freshest seasonal ingredients.</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="starters">Starters</button>
+                <button class="category-btn" data-category="mains">Main Courses</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+                <button class="category-btn" data-category="drinks">Drinks</button>
+            </div>
+
+            <div class="dishes-grid">
+                <!-- Dish 1 -->
+                <div class="dish-card" data-category="mains">
+                    <div class="dish-image" style="background-image: url('images/bg12.jpg');"></div>
+                    <div class="dish-info">
+                        <h3>Truffle Infused Ribeye</h3>
+                        <span class="dish-price">FRW4200</span>
+                        <p class="dish-description">Premium 12oz ribeye with black truffle butter, roasted garlic mash, and seasonal vegetables.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="dish-card" data-category="mains">
+                    <div class="dish-image" style="background-image: url('images/food-4511335_1280.jpg');"></div>
+                    <div class="dish-info">
+                        <h3>Pan-Seared Scallops</h3>
+                        <span class="dish-price">$36</span>
+                        <p class="dish-description">Perfectly seared scallops with cauliflower purée, crispy pancetta, and lemon beurre blanc.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="dish-card" data-category="starters">
+                    <div class="dish-image" style="background-image: url('images/cartering0007.jpg');"></div>
+                    <div class="dish-info">
+                        <h3>Burrata Salad</h3>
+                        <span class="dish-price">$18</span>
+                        <p class="dish-description">Creamy burrata with heirloom tomatoes, basil oil, aged balsamic, and sourdough crisps.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 4 -->
+                <div class="dish-card" data-category="desserts">
+                    <div class="dish-image" style="background-image: url('images/bg6.jpg');"></div>
+                    <div class="dish-info">
+                        <h3>Chocolate Soufflé</h3>
+                        <span class="dish-price">$14</span>
+                        <p class="dish-description">Warm chocolate soufflé with a molten center, served with vanilla bean ice cream.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 5 -->
+                <div class="dish-card" data-category="drinks">
+                    <div class="dish-image" style="background-image: url('images/card4.jfif');"></div>
+                    <div class="dish-info">
+                        <h3>Signature Cocktail</h3>
+                        <span class="dish-price">$12</span>
+                        <p class="dish-description">Our house special with gin, elderflower, cucumber, and mint.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 6 -->
+                <div class="dish-card" data-category="mains">
+                    <div class="dish-image" style="background-image: url('images/bbg.jfif');"></div>
+                    <div class="dish-info">
+                        <h3>Truffle Pasta</h3>
+                        <span class="dish-price">$28</span>
+                        <p class="dish-description">Handmade pasta with wild mushrooms, black truffle, and parmesan cream sauce.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>Discover the passion behind OpenMind Restaurant</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Since 2010</h3>
+                    <p>Founded by Chef Michael Cooper, OpenMind Restaurant began as a small bistro with a big vision - to create a dining experience that challenges conventions while respecting culinary traditions.</p>
+                    <p>Today, our restaurant has earned multiple Michelin stars and is recognized as one of the most innovative dining establishments in the country.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Michelin Stars</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about/chef.jpg" alt="Our Chef">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>A visual journey through our culinary world</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/pexels-igor-starkov-233202-1307698.jpg" alt="Restaurant Interior">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/gallery2.jpg" alt="Chef Preparing Dish">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/catering06.jpg" alt="Dining Experience">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/champagne-3954774_1280.jpg" alt="Wine Selection">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/gallery5.jpg" alt="Dessert Presentation">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/pexels-pixabay-260922.jpg" alt="Cocktail Bar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section class="section reservations" id="reservations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Reservations</h2>
+                <p>Book your table for an unforgettable dining experience</p>
+            </div>
+            
+            <div class="reservation-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select Time</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7 People</option>
+                            <option value="8">8+ People</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Book Table</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Guests Say</h2>
+                <p>Don't just take our word for it - hear from our satisfied customers about their dining experiences.</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The truffle ribeye was cooked to absolute perfection. The service was impeccable and the ambiance was perfect for our anniversary dinner. We'll definitely be back!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Food Critic</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Every dish we tried was bursting with flavor. The chef's tasting menu with wine pairings was worth every penny. This is fine dining at its best."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Michael Chen" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Regular Guest</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The scallops melted in my mouth, and the wine selection was exceptional. The staff made excellent recommendations that enhanced our entire experience."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Emma Rodriguez" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>First-time Visitor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 17 Main Street, Musanze, Rwanda</p>
+                    <p><i class="fas fa-phone-alt"></i> (+250) 796-302-427</p>
+                    <p><i class="fas fa-envelope"></i> info@openmindrestaurant.com</p>
+                    <p><i class="fas fa-clock"></i> Open Monday-Sunday: 6AM - 11PM</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.634075831085!2d29.63221531575399!3d-1.499998998991017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc3a1b00000001%3A0x123456789abcdef!2sOpenMind%20Restaurant!5e0!3m2!1sen!2srw!4v1620000000000!5m2!1sen!2srw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <img src="images/LOGO13.svg" alt="OpenMind Restaurant" class="footer-logo">
+                <p>OpenMind Restaurant brings innovative culinary experiences to the heart of the city. Our passion for food and hospitality creates unforgettable dining moments.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <img src="icons/social/icons8-instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <img src="icons/social/icons8-facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <img src="icons/social/icons8-x.svg" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <img src="icons/social/icons8-youtube.svg" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section quick-links">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#signature-dishes">Menu</a></li>
+                    <li><a href="#reservations">Reservations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 17 Main Street Musanze</p>
+                <p><i class="fas fa-phone-alt"></i> (+250) 796-302-427</p>
+                <p><i class="fas fa-envelope"></i> info@openmindrestaurant.com</p>
+                <p><i class="fas fa-clock"></i> Open Monday-Sunday: 6AM - 11PM</p>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h4>Newsletter</h4>
+                <p>Subscribe to receive updates on special events and seasonal menus.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> OpenMind Restaurant. All rights reserved. | Designed with passion by Culinary Arts Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Auto typing text
+    const texts = [
+        "We are committed to delivering innovative culinary experiences.\n",
+        "Empowering your dining experience with exceptional flavors.\n",
+        "Join us on this exciting gastronomic journey!"
+    ];
+
+    const target = document.getElementById('autoWrite');
+    let currentTextIndex = 0;
+    let currentCharIndex = 0;
+
+    function type() {
+        const currentText = texts[currentTextIndex];
+        if (currentCharIndex < currentText.length) {
+            target.textContent += currentText.charAt(currentCharIndex);
+            currentCharIndex++;
+            setTimeout(type, 40);
+        } else {
+            setTimeout(deleteText, 1500);
+        }
+    }
+
+    function deleteText() {
+        if (currentCharIndex > 0) {
+            target.textContent = target.textContent.slice(0, -1);
+            currentCharIndex--;
+            setTimeout(deleteText, 20);
+        } else {
+            currentTextIndex = (currentTextIndex + 1) % texts.length;
+            setTimeout(type, 200);
+        }
+    }
+
+    // Start the typing animation
+    type();
+
+    // === CUSTOM CURSOR ===
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    const hoverElements = document.querySelectorAll(
+        'a, button, .dish-card, .category-btn, .testimonial-card, .social-icon, .nav-link'
+    );
+
+    // Main cursor movement
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        // Follower with delay
+        setTimeout(() => {
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+    });
+
+    // Hover effects
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('active');
+            cursorFollower.classList.add('active');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('active');
+            cursorFollower.classList.remove('active');
+        });
+    });
+
+    // Click animation
+    document.addEventListener('click', () => {
+        cursor.classList.add('click');
+        setTimeout(() => cursor.classList.remove('click'), 500);
+    });
+
+    // === STICKY HEADER ===
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    const scrollThreshold = 100;
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            header.classList.remove('hidden');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+            header.classList.add('hidden');
+        } else {
+            header.classList.remove('hidden');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // === MOBILE MENU ===
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    overlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // === SCROLL REVEAL ANIMATIONS ===
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.section-title, .dish-card, .hero-content, .about-content, .gallery-item, .reservation-form, .testimonial-card');
+        
+        elements.forEach(el => {
+            const elementPosition = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+                el.classList.add('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // === FOOD PARTICLE ANIMATION ===
+    const foodContainer = document.getElementById('foodContainer');
+    const foodItems = ['🍔', '🍕', '🍣', '🍝', '🍩', '🍦', '🍗', '🥗', '🍤', '🥩'];
+    const numParticles = 15;
+
+    // Create particles
+    let particles = [];
+    
+    const createParticles = () => {
+        for (let i = 0; i < numParticles; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'food-item';
+            
+            // Random properties
+            const emoji = foodItems[Math.floor(Math.random() * foodItems.length)];
+            const size = 20 + Math.random() * 20;
+            const startX = Math.random() * 100;
+            const offsetX = (Math.random() - 0.5) * 200;
+            const duration = 15 + Math.random() * 15;
+            const delay = Math.random() * -duration;
+            
+            particle.textContent = emoji;
+            particle.style.fontSize = `${size}px`;
+            particle.style.left = `${startX}%`;
+            particle.style.setProperty('--offset-x', `${offsetX}px`);
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `${delay}s`;
+            
+            foodContainer.appendChild(particle);
+            particles.push({
+                element: particle,
+                startX,
+                offsetX,
+                duration,
+                delay
+            });
+        }
+    };
+
+    // Optimized animation using requestAnimationFrame
+    let lastTime = 0;
+    const animateParticles = (time) => {
+        if (!lastTime) lastTime = time;
+        const deltaTime = time - lastTime;
+        lastTime = time;
+        
+        particles.forEach(particle => {
+            const progress = ((performance.now() / 1000 + particle.delay) % particle.duration) / particle.duration;
+            const yPos = progress * (window.innerHeight + 100);
+            const xPos = particle.startX + (progress * particle.offsetX);
+            const opacity = progress < 0.1 ? progress * 10 : 
+                          progress > 0.9 ? (1 - progress) * 10 : 1;
+            
+            particle.element.style.transform = `translateY(${yPos}px) translateX(${xPos}px) rotate(${progress * 360}deg)`;
+            particle.element.style.opacity = opacity;
+        });
+        
+        requestAnimationFrame(animateParticles);
+    };
+
+    createParticles();
+    requestAnimationFrame(animateParticles);
+
+    // === MENU FILTERING ===
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter dishes
+            const category = button.dataset.category;
+            const dishes = document.querySelectorAll('.dish-card');
+            
+            dishes.forEach(dish => {
+                if (category === 'all' || dish.dataset.category === category) {
+                    dish.style.display = 'block';
+                } else {
+                    dish.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // === CART FUNCTIONALITY ===
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartCount = document.querySelector('.cart-count');
+    let cartItems = 0;
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Animation
+            button.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Added!
+            `;
+            
+            setTimeout(() => {
+                button.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Add to Cart
+                `;
+            }, 1500);
+            
+            // Update cart
+            cartItems++;
+            cartCount.textContent = cartItems;
+            cartCount.style.transform = 'scale(1.2)';
+            setTimeout(() => cartCount.style.transform = 'scale(1)', 300);
+        });
+    });
+
+    // === CURRENT YEAR IN FOOTER ===
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // === HERO IMAGE PARALLAX ===
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        const hero = document.getElementById('hero');
+        hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+    });
+
+    // === SMOOTH SCROLLING ===
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // === PRODUCT CONVEYOR ===
+    const container = document.querySelector('.cards-wrapper');
+    const cardsContainer = document.getElementById('cardsContainer');
+    const navDots = document.getElementById('navDots');
+    const cards = document.querySelectorAll('.product-card');
+    const cardWidth = cards[0].offsetWidth + 24; // width + margin-right
+    
+    let currentIndex = 0;
+    const cardsPerView = Math.floor(container.offsetWidth / cardWidth);
+    const totalSlides = Math.ceil(cards.length / cardsPerView);
+    
+    // Create navigation dots
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('nav-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+            goToSlide(parseInt(this.dataset.index));
+        });
+        navDots.appendChild(dot);
+    }
+    
+    // Auto-play the conveyor
+    let autoPlayInterval = setInterval(() => {
+        nextSlide();
+    }, 2000);
+    
+    // Pause on hover
+    container.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+    
+    container.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(() => {
+            nextSlide();
+        }, 4000);
+    });
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        const translateX = -currentIndex * (cardWidth * cardsPerView);
+        cardsContainer.style.transform = `translateX(${translateX}px)`;
+        
+        // Update active dot
+        document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+    }
+    
+    // Previous slide (not used in auto-play but can be added to buttons if needed)
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        goToSlide(currentIndex);
+    }
+
+    // === FORM VALIDATION ===
+    const reservationForm = document.querySelector('.reservation-form form');
+    if (reservationForm) {
+        reservationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const name = this.querySelector('#name').value;
+            const email = this.querySelector('#email').value;
+            const date = this.querySelector('#date').value;
+            
+            if (!name || !email || !date) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Form submission would go here
+            alert('Reservation submitted successfully! We will contact you shortly.');
+            this.reset();
+        });
+    }
+
+    // === LAZY LOAD IMAGES ===
+    const lazyLoadImages = () => {
+        const lazyImages = document.querySelectorAll('.dish-image[data-src]');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.backgroundImage = `url(${img.dataset.src})`;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        }, { rootMargin: '200px' });
+
+        lazyImages.forEach(img => observer.observe(img));
+    };
+
+    // Initialize lazy loading
+    lazyLoadImages();
+});
+    </script>
+</body>
+</html>

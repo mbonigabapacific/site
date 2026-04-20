@@ -1,0 +1,694 @@
+<!DOCTYPE HTML>
+<!--
+	MBONIGABA Pacific
+	mbonigabapacific.site.info | @mbonigaba
+	personal portfolio website 
+-->
+<html>
+	<head>
+		<!-- Title & basic description (replace if desired) -->
+		<title>Contact - Mbonigaba Pacific | Personal Website</title>
+		<meta name="description" content="Contact Mbonigaba Pacific - Full-Stack Developer specializing in scalable web applications and cloud architecture." />
+		<meta name="keywords" content="Mbonigaba Pacific, web development, web design, graphic design, portfolio, contact" />
+		<meta name="author" content="Mbonigaba Pacific" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Google Site Verification (replace token if needed) -->
+		<meta name="google-site-verification" content="PfNXKP3ZrYzhZEleFm3y3m_BlQJTI9XDAYsX4rw5OAs" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Contact - Mbonigaba Pacific | Portfolio" />
+		<meta property="og:description" content="Contact Mbonigaba Pacific - Full-Stack Developer specializing in scalable web applications and cloud architecture." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mbonigabapacific.github.io/site/contact.html" />
+		<meta property="og:image" content="https://mbonigabapacific.github.io/site/assets/images/me.png" />
+		<link rel="canonical" href="https://mbonigabapacific.github.io/site/contact.html" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Contact - Mbonigaba Pacific | Portfolio" />
+		<meta name="twitter:description" content="Contact Mbonigaba Pacific - Full-Stack Developer specializing in scalable web applications and cloud architecture." />
+		<meta name="twitter:image" content="https://mbonigabapacific.github.io/site/assets/images/me.png" />
+		<meta name="twitter:site" content="@mbonigabapacific" />
+
+		<!-- PWA / Mobile Theme Colors -->
+		<meta name="theme-color" content="#e7a169" id="theme-color-meta" />
+		<meta name="msapplication-navbutton-color" content="#e7a169" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- Favicon & Manifest -->
+		<link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+		<link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="pacific" />
+		<link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+		<!-- Fonts & CSS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="assets/particles.js-master/particles.min.js"></script>
+
+		<!-- Editorial-design homepage styles -->
+		<style>
+			:root {
+				--surface: #ffffff;
+				--surface-container-low: #ffffff;
+				--surface-container-lowest: #ffffff;
+				--primary: #e7a169;
+				--primary-container: #d97757;
+				--secondary: #346762;
+				--on-surface: #1a1c1a;
+				--on-surface-muted: #5b5d57;
+				--border-ghost: rgba(231,161,105,0.15);
+				--shadow-soft: 0 24px 60px rgba(26,28,26,0.08);
+				--radius: 28px;
+			}
+			* { box-sizing: border-box; }
+			html { 
+				scroll-behavior: smooth;
+				scrollbar-width: thin;
+				scrollbar-color: var(--primary) transparent;
+			}
+			
+			/* Webkit scrollbar styling */
+			html::-webkit-scrollbar {
+				width: 8px;
+			}
+			
+			html::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			
+			html::-webkit-scrollbar-thumb {
+				background: var(--primary);
+				border-radius: 4px;
+				opacity: 0.7;
+			}
+			
+			html::-webkit-scrollbar-thumb:hover {
+				background: var(--primary-container);
+				opacity: 1;
+			}
+			
+			body {
+				margin: 0;
+				min-height: 100vh;
+				font-family: 'Manrope', sans-serif;
+				background: transparent;
+				color: var(--on-surface);
+				line-height: 1.7;
+				overscroll-behavior: contain;
+				scroll-padding-top: 80px;
+			}
+			img, picture { display: block; max-width: 100%; }
+			a { color: inherit; text-decoration: none; }
+			button, input, textarea { font: inherit; }
+			.page-shell { width: 100%; max-width: 1240px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+			.site-header {
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 0;
+				backdrop-filter: blur(14px);
+				background: rgba(255,255,255,0.98);
+				border-bottom: 1px solid rgba(0,0,0,0.05);
+			}
+			.brand .eyebrow { margin: 0 0 0.75rem; font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--secondary); }
+			.brand h1 { margin: 0; font-size: clamp(2.25rem, 3.2vw, 3.75rem); line-height: 1.02; letter-spacing: -0.03em; }
+			.site-nav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+			.site-nav a { padding: 0.35rem 0.2rem; color: var(--on-surface-muted); }
+			.site-nav a:hover, .site-nav a:focus-visible { color: var(--primary); outline: none; }
+			.section { padding: 3rem 0; }
+			.section-header { max-width: 740px; }
+			.section-header p.eyebrow { margin-bottom: 1rem; color: var(--secondary); letter-spacing: 0.28em; text-transform: uppercase; font-size: 0.85rem; }
+			.section-header h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.05; }
+			.contact-panel { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; margin-top: 2rem; }
+			.contact-card { padding: 2rem; border-radius: 32px; background: var(--surface-container-low); border: 1px solid rgba(26,28,26,0.05); }
+			.contact-card p { margin: 0 0 1rem; color: var(--on-surface-muted); }
+			.contact-form { display: grid; gap: 1.5rem; padding: 2rem; border-radius: 32px; background: var(--surface); border: 1px solid var(--border-ghost); box-shadow: 0 8px 32px rgba(26,28,26,0.08); }
+			.contact-form .form-group { display: grid; gap: 0.5rem; }
+			.contact-form label { font-weight: 600; color: var(--on-surface); font-size: 0.95rem; letter-spacing: 0.02em; }
+			.contact-form input, .contact-form textarea { 
+				width: 100%; 
+				border-radius: 16px; 
+				border: 2px solid var(--border-ghost); 
+				background: var(--surface-container-lowest); 
+				padding: 1rem 1.2rem; 
+				color: var(--on-surface); 
+				font-size: 1rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 2px 8px rgba(26,28,26,0.04);
+			}
+			.contact-form textarea { min-height: 140px; resize: vertical; font-family: inherit; }
+			.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--on-surface-muted); opacity: 0.7; }
+			.contact-form input:focus, .contact-form textarea:focus { 
+				outline: none; 
+				border-color: var(--primary); 
+				background: var(--surface);
+				box-shadow: 0 0 0 4px rgba(153,70,42,0.1), 0 4px 16px rgba(26,28,26,0.08);
+				transform: translateY(-1px);
+			}
+			.contact-form input:hover, .contact-form textarea:hover {
+				border-color: rgba(153,70,42,0.2);
+				background: var(--surface);
+			}
+			.contact-form button { 
+				width: 100%; 
+				padding: 1.1rem 2rem; 
+				border: none; 
+				border-radius: 16px; 
+				background: linear-gradient(135deg, var(--primary), var(--primary-container)); 
+				color: #fff; 
+				font-weight: 700; 
+				font-size: 1.05rem;
+				cursor: pointer; 
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 16px rgba(153,70,42,0.3);
+				position: relative;
+				overflow: hidden;
+			}
+			.contact-form button:hover { 
+				transform: translateY(-2px); 
+				box-shadow: 0 8px 24px rgba(153,70,42,0.4);
+			}
+			.contact-form button:active {
+				transform: translateY(0);
+			}
+			#contact-success {
+				padding: 1rem 1.5rem;
+				border-radius: 12px;
+				background: rgba(52,103,98,0.1);
+				color: var(--secondary);
+				border: 1px solid rgba(52,103,98,0.2);
+				font-weight: 600;
+				animation: slideInUp 0.4s ease;
+			}
+			.site-footer { padding: 2rem 0 0; color: var(--on-surface-muted); text-align: center; font-size: 0.95rem; }
+			@media (max-width: 640px) {
+				.page-shell { padding: 1.2rem 1.2rem 2rem; }
+				.site-nav { justify-content: center; }
+				.contact-panel { grid-template-columns: 1fr; gap: 1.5rem; }
+				.contact-form { padding: 1.5rem; }
+				.contact-form input, .contact-form textarea { padding: 0.9rem 1.1rem; }
+				.contact-form button { padding: 1rem 1.5rem; }
+			}
+			
+			/* Ultra-small phone optimization (320px and below) */
+			@media (max-width: 320px) {
+				.page-shell { 
+					padding: 1rem 0.8rem 1.5rem; 
+					min-height: 100vh;
+				}
+				
+				/* Header optimization */
+				.site-header {
+					padding: 0.8rem 0;
+					flex-direction: column;
+					gap: 1rem;
+				}
+				
+				.brand h1 { 
+					font-size: 1.8rem; 
+					line-height: 1.1;
+				}
+				
+				.brand .eyebrow { 
+					font-size: 0.7rem; 
+					margin-bottom: 0.5rem;
+				}
+				
+				/* Navigation optimization */
+				.site-nav {
+					flex-wrap: wrap;
+					gap: 0.5rem;
+					justify-content: center;
+				}
+				
+				.site-nav a {
+					padding: 0.3rem 0.5rem;
+					font-size: 0.85rem;
+				}
+				
+				.site-nav i {
+					font-size: 0.8em;
+					margin-right: 0.3rem;
+				}
+				
+				.theme-toggle {
+					padding: 0.3rem 0.5rem;
+				}
+				
+				/* Section optimization */
+				.section {
+					padding: 2rem 0;
+				}
+				
+				.section-header h2 {
+					font-size: 1.8rem;
+					line-height: 1.1;
+				}
+				
+				.section-header p.eyebrow {
+					font-size: 0.8rem;
+				}
+				
+				/* Contact form optimization */
+				.contact-panel {
+					gap: 1.2rem;
+				}
+				
+				.contact-card {
+					padding: 1.2rem;
+					border-radius: 20px;
+				}
+				
+				.contact-form {
+					padding: 1.2rem;
+				}
+				
+				.contact-form label {
+					font-size: 0.9rem;
+					margin-bottom: 0.5rem;
+				}
+				
+				.contact-form input,
+				.contact-form textarea {
+					padding: 0.8rem 1rem;
+					font-size: 0.95rem;
+					border-radius: 12px;
+				}
+				
+				.contact-form textarea {
+					min-height: 120px;
+				}
+				
+				.contact-form button {
+					padding: 0.8rem 1.2rem;
+					font-size: 0.9rem;
+					border-radius: 12px;
+				}
+				
+				.contact-form input::placeholder,
+				.contact-form textarea::placeholder {
+					font-size: 0.85rem;
+				}
+				
+				/* Footer optimization */
+				.site-footer {
+					padding: 1.5rem 0 0;
+					font-size: 0.85rem;
+				}
+				
+				/* Scroll to top button optimization */
+				.scroll-to-top {
+					width: 45px;
+					height: 45px;
+					bottom: 20px;
+					right: 20px;
+				}
+				
+				.scroll-to-top i {
+					font-size: 16px;
+				}
+			}
+			
+			@keyframes slideInUp {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			/* 3D Animation Styles */
+			.contact-card, .contact-form {
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.contact-card:hover {
+				transform: translateY(-2px) rotateX(2deg);
+				box-shadow: var(--shadow-soft);
+			}
+			.contact-form:hover {
+				transform: translateY(-1px) rotateX(1deg);
+			}
+			
+			/* Particles Background */
+			#particles-js {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				z-index: 1;
+				background: transparent;
+				will-change: transform;
+				transition: transform 0.1s ease-out;
+			}
+			
+			/* Make page-content background-less */
+			.page-content {
+				background: transparent !important;
+			}
+			
+			/* Override main.css #main background */
+			#main {
+				background: transparent !important;
+			}
+			
+			main {
+				background: transparent !important;
+			}
+			
+			/* Ensure content overlays properly */
+			.page-shell {
+				position: relative;
+				z-index: 10;
+				background: rgba(255, 255, 255, 0.85);
+				backdrop-filter: blur(20px);
+			}
+			
+			/* Allow particle interaction through transparent areas */
+			.page-content {
+				pointer-events: none;
+			}
+			
+			.page-content > * {
+				pointer-events: auto;
+			}
+			
+			/* Adjust header for particles background */
+			.site-header {
+				background: rgba(255, 255, 255, 0.9);
+				backdrop-filter: blur(14px);
+			}
+			
+			/* Navigation icon styling */
+			.site-nav i {
+				margin-right: 0.5rem;
+				font-size: 0.9em;
+				opacity: 0.8;
+				transition: opacity 0.2s ease;
+			}
+			
+			.site-nav a:hover i {
+				opacity: 1;
+			}
+			
+			/* Scroll to top button */
+			.scroll-to-top {
+				position: fixed;
+				bottom: 30px;
+				right: 30px;
+				width: 50px;
+				height: 50px;
+				background: rgba(255, 255, 255, 0.9);
+				border: 1px solid rgba(153, 70, 42, 0.3);
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(20px);
+				transition: all 0.3s ease;
+				z-index: 200;
+				backdrop-filter: blur(10px);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			}
+			
+			.scroll-to-top:hover {
+				background: rgba(255, 255, 255, 0.95);
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+			}
+			
+			.scroll-to-top i {
+				color: var(--primary);
+				font-size: 18px;
+				transition: transform 0.2s ease;
+			}
+			
+			.scroll-to-top:hover i {
+				transform: translateY(-2px);
+			}
+			
+			.scroll-to-top.visible {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		</style>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<div id="particles-js"></div>
+		<button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+		<div class="page-shell">
+			<header class="site-header">
+				<div class="brand">
+					<p class="eyebrow">The Digital Curator</p>
+					<h1>Mbonigaba Pacific</h1>
+				</div>
+				<nav class="site-nav" aria-label="Primary navigation">
+					<a href="index.html#work"><i class="fas fa-briefcase"></i> Work</a>
+					<a href="about.html"><i class="fas fa-user"></i> About</a>
+					<a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+					<a href="https://github.com/mbonigabapacific" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+				</nav>
+			</header>
+
+			<main class="page-content s-section">
+				<section id="contact" class="section">
+					<div class="section-header">
+						<p class="eyebrow">Contact</p>
+						<h2>Ready to start a new project?</h2>
+					</div>
+					<div class="contact-panel">
+						<div class="contact-card">
+							<p>Send a brief project summary, your timeline, and the main goals. I respond quickly and can help shape the technical plan, design direction, and launch strategy.</p>
+							<p><strong>Email</strong><br>mbonigabapacific@example.com</p>
+							<p><strong>Location</strong><br>Remote / Kigali, Rwanda</p>
+						</div>
+						<form class="contact-form" action="https://formspree.io/f/myzrlpgl" method="POST">
+							<input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+							<div class="form-group">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" placeholder="Your full name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+							</div>
+							<div class="form-group">
+								<label for="subject">Subject</label>
+								<input type="text" id="subject" name="subject" placeholder="Project inquiry or collaboration" required>
+							</div>
+							<div class="form-group">
+								<label for="message">Message</label>
+								<textarea id="message" name="message" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+							</div>
+							<button type="submit">Send Message</button>
+							<div id="contact-success" role="status" aria-live="polite" style="display:none;">Thanks - your message has been sent. I'll get back to you soon.</div>
+						</form>
+					</div>
+				</section>
+			</main>
+
+			<footer class="site-footer">
+				<p>© 2026 Mbonigaba Pacific —software developer</p>
+			</footer>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var form = document.querySelector('.contact-form');
+				var success = document.getElementById('contact-success');
+				if (!form) return;
+				form.addEventListener('submit', function (event) {
+					event.preventDefault();
+					if (form.querySelector('[name="website"]').value) return;
+					var data = new FormData(form);
+					fetch(form.action, {
+						method: 'POST',
+						body: data,
+						headers: { 'Accept': 'application/json' }
+					}).then(function (response) {
+						if (response.ok) {
+							form.reset();
+							success.style.display = 'block';
+						} else {
+							alert('Error sending message. Please try again.');
+						}
+					}).catch(function () {
+						alert('Network error. Please try again later.');
+					});
+				});
+			});
+			// Scroll behavior and 3D animations
+			document.addEventListener('DOMContentLoaded', function () {
+				const observerOptions = {
+					threshold: 0.1,
+					rootMargin: '0px 0px -50px 0px'
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.style.opacity = '1';
+							entry.target.style.transform = 'translateY(0) rotateX(0deg)';
+						}
+					});
+				}, observerOptions);
+
+				document.querySelectorAll('.contact-card, .contact-form').forEach(el => {
+					el.style.opacity = '0';
+					el.style.transform = 'translateY(20px) rotateX(10deg)';
+					el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+					observer.observe(el);
+				});
+			});
+			
+			// Prevent context menu
+			document.addEventListener('contextmenu', event => event.preventDefault());
+			
+			// Initialize particles.js
+			particlesJS('particles-js', {
+				particles: {
+					number: {
+						value: 80,
+						density: {
+							enable: true,
+							value_area: 800
+						}
+					},
+					color: {
+						value: '#99462a'
+					},
+					shape: {
+						type: 'circle'
+					},
+					opacity: {
+						value: 0.5,
+						random: false,
+						anim: {
+							enable: false
+						}
+					},
+					size: {
+						value: 3,
+						random: true,
+						anim: {
+							enable: false
+						}
+					},
+					line_linked: {
+						enable: true,
+						distance: 150,
+						color: '#e7a169',
+						opacity: 0.2,
+						width: 1
+					},
+					move: {
+						enable: true,
+						speed: 2,
+						direction: 'none',
+						random: false,
+						straight: false,
+						out_mode: 'out',
+						bounce: false,
+						attract: {
+							enable: false
+						}
+					}
+				},
+				interactivity: {
+					detect_on: 'canvas',
+					events: {
+						onhover: {
+							enable: true,
+							mode: 'grab'
+						},
+						onclick: {
+							enable: true,
+							mode: 'push'
+						},
+						resize: true
+					},
+					modes: {
+						grab: {
+							distance: 140,
+							line_linked: {
+								opacity: 0.5
+							}
+						},
+						push: {
+							particles_nb: 4
+						}
+					}
+				},
+				retina_detect: true
+			});
+			
+			// Parallax scroll effect - slow motion opposing movement
+			let parallaxElement = document.getElementById('particles-js');
+			let ticking = false;
+			
+			function updateParallax() {
+				const scrolled = window.pageYOffset;
+				const parallaxSpeed = 0.5; // Adjust for slower/faster parallax
+				const yPos = -(scrolled * parallaxSpeed);
+				
+				parallaxElement.style.transform = `translateY(${yPos}px)`;
+				ticking = false;
+			}
+			
+			function requestTick() {
+				if (!ticking) {
+					window.requestAnimationFrame(updateParallax);
+					ticking = true;
+				}
+			}
+			
+			// Add scroll event listener with throttling
+			window.addEventListener('scroll', requestTick);
+			
+			// Initial position
+			updateParallax();
+			
+			// Scroll to top button functionality
+			const scrollToTopBtn = document.getElementById('scroll-to-top');
+			
+			// Show/hide button based on scroll position
+			window.addEventListener('scroll', () => {
+				if (window.pageYOffset > 300) {
+					scrollToTopBtn.classList.add('visible');
+				} else {
+					scrollToTopBtn.classList.remove('visible');
+				}
+			});
+			
+			// Scroll to top when clicked
+			scrollToTopBtn.addEventListener('click', () => {
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			});
+		</script>
+	</body>
+</html>

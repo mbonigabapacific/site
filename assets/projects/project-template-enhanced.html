@@ -1,0 +1,379 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project Template | Mbonigaba Pacific</title>
+  <meta name="description" content="Project template with enhanced background features." />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Responsive Design, Portfolio, Mbonigaba Pacific" />
+  <meta name="author" content="Mbonigaba Pacific" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- PWA / Mobile Theme Colors -->
+  <meta name="theme-color" content="#FF8800" id="theme-color-meta" />
+  <meta name="msapplication-navbutton-color" content="#FF8800" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon_io/site.webmanifest" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <!-- Enhanced Project CSS -->
+  <link rel="stylesheet" href="../assets/css/project-enhanced.css" />
+  
+  <!-- Font Awesome for pixelated background -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="project-page is-preload">
+
+	<!-- Pixelated Background -->
+	<div class="background-container">
+		<div class="pixel-grid" id="pixelGrid"></div>
+		<div class="pixel-rain" id="pixelRain"></div>
+	</div>
+
+	<!-- Control Buttons for Pixel Background -->
+	<div class="controls">
+		<div class="control-btn" id="togglePixels" title="Toggle Pixel Grid">
+			<i class="fas fa-th-large"></i>
+		</div>
+		<div class="control-btn" id="toggleRain" title="Toggle Pixel Rain">
+			<i class="fas fa-cloud-rain"></i>
+		</div>
+		<div class="control-btn" id="colorShift" title="Change Color Theme">
+			<i class="fas fa-palette"></i>
+		</div>
+	</div>
+
+	<!-- Skip link (for keyboard users) -->
+	<a href="#main" class="skip-link">Skip to main content</a>
+
+	<main id="main">
+    <article class="panel">
+      <header>
+        <h1>Project Title</h1>
+        <p class="lead">Project description goes here.</p>
+        <p>
+          <a href="../../index.html" class="btn-inline">Back</a>
+        </p>
+      </header>
+
+      <section>
+        <h2>Project Overview</h2>
+        <p>Detailed project description and overview.</p>
+        
+        <picture>
+          <source type="image/webp" srcset="../assets/Screenshots/project-screenshot.webp">
+          <img src="../assets/Screenshots/project-screenshot.png" alt="Project screenshot" loading="lazy">
+        </picture>
+      </section>
+
+      <section>
+        <h2>Technologies Used</h2>
+        <div>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Responsive Design</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Key Features</h2>
+        <ul>
+          <li>Feature 1 description</li>
+          <li>Feature 2 description</li>
+          <li>Feature 3 description</li>
+        </ul>
+      </section>
+
+      <section class="highlight-box">
+        <h2>Project Highlights</h2>
+        <p>Key achievements and notable aspects of this project.</p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Mbonigaba Pacific. All rights reserved.</p>
+        <p>
+          <a href="../../index.html" class="btn-inline">Back to Portfolio</a>
+        </p>
+      </footer>
+    </article>
+  </main>
+
+  <!-- Basic JavaScript -->
+  <script>
+    // Remove preload class
+    window.addEventListener('load', function() {
+      document.body.classList.remove('is-preload');
+    });
+
+    // Scroll reveal animations
+    document.addEventListener('DOMContentLoaded', function() {
+      if ('IntersectionObserver' in window) {
+        const reveals = document.querySelectorAll('.panel > section, .panel > header, .panel > footer');
+        const io = new IntersectionObserver(function(entries, obs) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        
+        reveals.forEach(function(el){ 
+          el.classList.add('scroll-reveal');
+          io.observe(el); 
+        });
+      }
+    });
+  </script>
+
+  <!-- Advanced Background JavaScript -->
+  <script>
+    // Pixelated Background JavaScript for Project Pages
+    document.addEventListener('DOMContentLoaded', function() {
+      const pixelGrid = document.getElementById('pixelGrid');
+      const pixelRain = document.getElementById('pixelRain');
+      const togglePixelsBtn = document.getElementById('togglePixels');
+      const toggleRainBtn = document.getElementById('toggleRain');
+      const colorShiftBtn = document.getElementById('colorShift');
+      
+      // Pixel grid dimensions
+      const gridWidth = Math.ceil(window.innerWidth / 16);
+      const gridHeight = Math.ceil(window.innerHeight / 16);
+      const totalPixels = gridWidth * gridHeight;
+      
+      // Create pixel grid
+      for (let i = 0; i < totalPixels; i++) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+        
+        // Randomly assign some pixels as "active" with colors (more subtle for project pages)
+        if (Math.random() < 0.05) {
+          const colorValue = Math.floor(Math.random() * 3);
+          switch(colorValue) {
+            case 0:
+              pixel.style.backgroundColor = 'rgba(139, 107, 95, 0.3)';
+              break;
+            case 1:
+              pixel.style.backgroundColor = 'rgba(193, 154, 139, 0.3)';
+              break;
+            case 2:
+              pixel.style.backgroundColor = 'rgba(232, 196, 187, 0.3)';
+              break;
+          }
+        } else {
+          pixel.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
+        }
+        
+        // Add hover effect
+        pixel.addEventListener('mouseover', function() {
+          this.classList.add('pixel-active');
+          this.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+          
+          setTimeout(() => {
+            this.classList.remove('pixel-active');
+            this.style.backgroundColor = '';
+          }, 300);
+        });
+        
+        pixelGrid.appendChild(pixel);
+      }
+      
+      // Create pixel rain (more subtle for project pages)
+      function createPixelRain() {
+        pixelRain.innerHTML = '';
+        
+        const rainCount = Math.floor(window.innerWidth * window.innerHeight / 30000);
+        
+        for (let i = 0; i < rainCount; i++) {
+          const rainPixel = document.createElement('div');
+          rainPixel.classList.add('rain-pixel');
+          
+          const leftPos = Math.random() * 100;
+          rainPixel.style.left = `${leftPos}%`;
+          
+          const size = 6 + Math.random() * 8;
+          rainPixel.style.width = `${size}px`;
+          rainPixel.style.height = `${size}px`;
+          
+          const colorValue = Math.floor(Math.random() * 4);
+          switch(colorValue) {
+            case 0:
+              rainPixel.style.backgroundColor = 'rgba(139, 107, 95, 0.3)';
+              break;
+            case 1:
+              rainPixel.style.backgroundColor = 'rgba(193, 154, 139, 0.3)';
+              break;
+            case 2:
+              rainPixel.style.backgroundColor = 'rgba(232, 196, 187, 0.3)';
+              break;
+            case 3:
+              rainPixel.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+              break;
+          }
+          
+          const duration = 4 + Math.random() * 6;
+          const delay = Math.random() * 5;
+          rainPixel.style.animationDuration = `${duration}s`;
+          rainPixel.style.animationDelay = `${delay}s`;
+          
+          pixelRain.appendChild(rainPixel);
+        }
+      }
+      
+      createPixelRain();
+      
+      // Control button functionality
+      let pixelsVisible = true;
+      let rainVisible = true;
+      let colorTheme = 0;
+      
+      togglePixelsBtn.addEventListener('click', function() {
+        pixelsVisible = !pixelsVisible;
+        pixelGrid.style.opacity = pixelsVisible ? '0.1' : '0';
+        this.innerHTML = pixelsVisible ? '<i class="fas fa-th-large"></i>' : '<i class="fas fa-th-large" style="opacity:0.5"></i>';
+      });
+      
+      toggleRainBtn.addEventListener('click', function() {
+        rainVisible = !rainVisible;
+        pixelRain.style.display = rainVisible ? 'block' : 'none';
+        this.innerHTML = rainVisible ? '<i class="fas fa-cloud-rain"></i>' : '<i class="fas fa-cloud-rain" style="opacity:0.5"></i>';
+      });
+      
+      colorShiftBtn.addEventListener('click', function() {
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('selectedTheme') || '0';
+        let colorTheme = parseInt(savedTheme);
+        colorTheme = (colorTheme + 1) % 3;
+        
+        localStorage.setItem('selectedTheme', colorTheme.toString());
+        
+        const themes = {
+          0: { // Original Orange Theme
+            primary: '#FF8800',
+            primaryDark: '#CC6600',
+            primaryLight: '#FFB366',
+            secondary: '#5a4a42',
+            accent: '#c19a8b',
+            bgPrimary: '#e8c4bb',
+            bgSecondary: '#d4a89f',
+            bgTertiary: '#c19a8b'
+          },
+          1: { // Blue Theme
+            primary: '#2196F3',
+            primaryDark: '#1976D2',
+            primaryLight: '#64B5F6',
+            secondary: '#37474F',
+            accent: '#90CAF9',
+            bgPrimary: '#bbd4e8',
+            bgSecondary: '#9fb8d4',
+            bgTertiary: '#8baac1'
+          },
+          2: { // Green Theme
+            primary: '#4CAF50',
+            primaryDark: '#388E3C',
+            primaryLight: '#81C784',
+            secondary: '#2E7D32',
+            accent: '#A5D6A7',
+            bgPrimary: '#bbe8c4',
+            bgSecondary: '#9fd4a8',
+            bgTertiary: '#8bc19a'
+          }
+        };
+        
+        const selectedTheme = themes[colorTheme];
+        
+        root.style.setProperty('--theme-primary', selectedTheme.primary);
+        root.style.setProperty('--theme-primary-dark', selectedTheme.primaryDark);
+        root.style.setProperty('--theme-primary-light', selectedTheme.primaryLight);
+        root.style.setProperty('--theme-secondary', selectedTheme.secondary);
+        root.style.setProperty('--theme-accent', selectedTheme.accent);
+        
+        root.style.setProperty('--primary-color', selectedTheme.bgPrimary);
+        root.style.setProperty('--secondary-color', selectedTheme.bgSecondary);
+        root.style.setProperty('--tertiary-color', selectedTheme.bgTertiary);
+        
+        const themeColorMeta = document.getElementById('theme-color-meta');
+        if (themeColorMeta) {
+          themeColorMeta.setAttribute('content', selectedTheme.primary);
+        }
+        
+        const pixels = document.querySelectorAll('.pixel');
+        pixels.forEach(pixel => {
+          if (pixel.style.backgroundColor && !pixel.classList.contains('pixel-active')) {
+            const colorValue = Math.floor(Math.random() * 3);
+            const colors = [
+              selectedTheme.bgTertiary + '4D',
+              selectedTheme.bgSecondary + '4D',
+              selectedTheme.bgPrimary + '4D'
+            ];
+            pixel.style.backgroundColor = colors[colorValue];
+          }
+        });
+        
+        createPixelRain();
+        
+        this.style.transform = 'scale(1.2) rotate(360deg)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 300);
+      });
+      
+      // Mouse move effect (more subtle for project pages)
+      document.addEventListener('mousemove', function(e) {
+        const x = e.clientX;
+        const y = e.clientY;
+        
+        const gridX = Math.floor(x / 16);
+        const gridY = Math.floor(y / 16);
+        
+        for (let dx = -1; dx <= 1; dx++) {
+          for (let dy = -1; dy <= 1; dy++) {
+            const pixelIndex = (gridY + dy) * gridWidth + (gridX + dx);
+            const pixels = pixelGrid.children;
+            
+            if (pixels[pixelIndex] && !pixels[pixelIndex].classList.contains('pixel-active')) {
+              setTimeout(() => {
+                if (pixels[pixelIndex]) {
+                  pixels[pixelIndex].classList.add('pixel-active');
+                  pixels[pixelIndex].style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                  
+                  setTimeout(() => {
+                    if (pixels[pixelIndex]) {
+                      pixels[pixelIndex].classList.remove('pixel-active');
+                      pixels[pixelIndex].style.backgroundColor = '';
+                    }
+                  }, 300);
+                }
+              }, Math.abs(dx + dy) * 50);
+            }
+          }
+        }
+      });
+    });
+  
+  // Prevent context menu
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+</body>
+</html>

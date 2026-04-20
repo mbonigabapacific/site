@@ -1,0 +1,242 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project Three — MovieFlx Streaming Website | Mbonigaba Pacific</title>
+  <meta name="description" content="Project Three: MovieFlx Streaming Website — A modern streaming service website focused on showcasing unlimited content, new releases, upcoming movies, and offline viewing capabilities." />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Responsive Design, Portfolio, Mbonigaba Pacific" />
+  <meta name="author" content="Mbonigaba Pacific" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Site Verification -->
+ 
+  <link rel="canonical" href="https://mbonigabapacific.github.io/site/assets/projects/project-three.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Project Three — MovieFlx Streaming Website" />
+  <meta property="og:description" content="A modern streaming service website focused on showcasing unlimited content, new releases, upcoming movies, and offline viewing capabilities." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mbonigabapacific.github.io/site/assets/projects/project-three.html" />
+  <meta property="og:image" content="https://mbonigabapacific.github.io/site/assets/projects/Screenshots/movieflx_website.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Three — MovieFlx Streaming Website" />
+  <meta name="twitter:description" content="A modern streaming service website focused on showcasing unlimited content, new releases, upcoming movies, and offline viewing capabilities." />
+  <meta name="twitter:image" content="https://mbonigabapacific.github.io/site/assets/projects/Screenshots/movieflx_website.png" />
+  <meta name="twitter:site" content="@mbonigabapacific" />
+
+  <!-- PWA / Mobile Theme Colors -->
+  <meta name="theme-color" content="#FF8800" id="theme-color-meta" />
+  <meta name="msapplication-navbutton-color" content="#FF8800" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon_io/site.webmanifest" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Project page custom styles -->
+  <style>
+    body { font-family: 'Rajdhani', 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .panel { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); animation: slideInUp 0.8s ease; }
+    header { margin-bottom: 2rem; animation: fadeInDown 0.6s ease; }
+    h1 { color: #FF8800; font-size: 2.2rem; margin-bottom: 0.5rem; position: relative; padding-bottom: 0.5rem; }
+    h1:after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: #FF8800; animation: expandWidth 0.8s ease 0.3s forwards; }
+    .lead { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; line-height: 1.6; animation: fadeIn 0.8s ease 0.2s both; }
+    h2 { color: #333; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #FF8800; padding-bottom: 0.5rem; animation: slideInLeft 0.6s ease; }
+    section { margin-bottom: 1.5rem; animation: fadeInScale 0.7s ease; }
+    ul { margin-left: 1.5rem; }
+    li { margin-bottom: 0.8rem; line-height: 1.6; animation: slideInLeft 0.6s ease; animation-fill-mode: both; }
+    li:nth-child(1) { animation-delay: 0.1s; }
+    li:nth-child(2) { animation-delay: 0.2s; }
+    li:nth-child(3) { animation-delay: 0.3s; }
+    li:nth-child(4) { animation-delay: 0.4s; }
+    p { line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    picture { display: block; margin: 2rem 0; animation: fadeInScale 0.8s ease; }
+    img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+    img:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; color: #888; font-size: 0.95rem; animation: fadeIn 0.8s ease 0.5s both; }
+    .btn-inline { display: inline-block; padding: 0.55rem 0.95rem; border-radius: 6px; background: #FF8800; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; margin: 0.2rem; border: none; cursor: pointer; }
+    .btn-inline:hover { background: #FF9922; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255,136,0,0.3); }
+    
+    /* Tech tags */
+    .tech-tag { display: inline-block; background: rgba(255,136,0,0.1); color: #FF8800; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem 0.25rem 0.25rem 0; font-weight: 600; animation: bounceIn 0.6s ease; }
+    
+    /* Project highlights */
+    .highlight-box { background: linear-gradient(135deg, rgba(255,136,0,0.1) 0%, rgba(255,136,0,0.05) 100%); border-left: 4px solid #FF8800; padding: 1.2rem; margin: 1.5rem 0; border-radius: 6px; animation: slideInLeft 0.7s ease; transition: all 0.3s ease; }
+    .highlight-box:hover { transform: translateX(8px); box-shadow: 0 6px 16px rgba(255,136,0,0.15); }
+    
+    /* Scroll reveal */
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .scroll-reveal.in-view { opacity: 1; transform: translateY(0); }
+    
+    @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.9); } 50% { transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes expandWidth { to { width: 100%; } }
+    
+    @media (max-width: 768px) {
+      .panel { padding: 1.5rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      header p { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CreativeWork",
+    "name":"Project Three — MovieFlx Streaming Website",
+    "description":"A modern streaming service website focused on showcasing unlimited content, new releases, upcoming movies, and offline viewing capabilities.",
+    "url":"https://mbonigabapacific.github.io/site/assets/projects/project-three.html",
+    "author":{"@type":"Person","name":"Mbonigaba Pacific"}
+  }
+  </script>
+</head>
+<body>
+  <main id="main">
+    <article class="panel">
+      <header>
+        <h1>Project Three — MovieFlx Streaming Website</h1>
+        <p class="lead">A modern streaming service website focused on showcasing unlimited content, new releases, upcoming movies, and offline viewing capabilities.</p>
+        <p>
+          <a href="../../index.html" class="btn-inline">Back</a>
+        </p>
+      </header>
+
+      <section>
+        <picture>
+          <img src="../projects/Screenshots/movieflx_website.png" alt="Project Three Screenshot" loading="lazy" style="width:100%; border-radius:8px; max-height:420px; object-fit:cover;">
+        </picture>
+      </section>
+
+      <section>
+        <h2>Overview</h2>
+        <p>This project represents a sleek, content-focused website developed for MovieFlx, a streaming service platform. The website promotes unlimited access to movies and TV shows, highlights new and upcoming releases, and encourages user engagement through downloadable content for offline viewing.</p>
+      </section>
+
+      <section>
+        <h2>Key Features</h2>
+          <h5>Unlimited Content Promotion</h5>
+          <p>Bold headline emphasizing unlimited access to movies, TV shows, and more, supported by performance metrics (e.g., “100ms”).</p>
+          <h5>New Release Movies Section</h5>
+          <p>A tabular layout displaying recently released movies with visual indicators (e.g., 1/4, 2/4) possibly representing ratings or progress.</p>
+          <h5>Upcoming Movies Preview</h5>
+          <p>A clean table format showcasing soon-to-be-released titles, building anticipation and user interest.</p>
+          <h5>Offline Viewing Call-to-Action</h5>
+          <p>Prominent section encouraging users to download content for offline watching, enhancing usability and convenience.</p>
+      </section>
+      
+      <section>
+        <h2>Visual & Content Design</h2>
+        <ul>
+            <li>Clean, minimalistic layout with strong typography and structured content zones.</li>
+            <li>Uses dividers and tables to organize movie listings clearly.</li>
+            <li>Emphasis on key selling points: unlimited access, new releases, and offline capability.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Tech Stack (Inferred)</h2>
+        <div>
+          <p><strong>Frontend:</strong></p>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+        <p style="margin-top: 1rem;"><strong>Layout:</strong></p>
+        <div>
+            <span class="tech-tag">Table-based and section-based structure</span>
+        </div>
+        <p style="margin-top: 1rem;"><strong>UI Components:</strong></p>
+        <div>
+            <span class="tech-tag">Headers</span>
+            <span class="tech-tag">Tables</span>
+            <span class="tech-tag">Bullet lists</span>
+            <span class="tech-tag">Dividers</span>
+            <span class="tech-tag">Promotional banners</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Role & Impact</h2>
+        <ul>
+            <li>Designed and structured a clear, engaging streaming service homepage.</li>
+            <li>Improved content discoverability through categorized movie sections.</li>
+            <li>Enhanced user retention by promoting offline viewing features.</li>
+            <li>Delivered a visually clean and modern interface suitable for entertainment platforms.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Performance & Quality</h2>
+        <ul>
+            <li><strong>Content Hierarchy:</strong> Clear visual flow from value proposition to specific content categories.</li>
+            <li><strong>User Engagement:</strong> Direct calls-to-action for downloading and exploring new releases.</li>
+            <li><strong>Scalability:</strong> Modular sections allow easy updates for new movies and features.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Lessons Learned</h2>
+        <p>This project highlighted the importance of clear content categorization and strong value-proposition messaging in entertainment platforms. Presenting new and upcoming content in an organized, visually accessible manner helps drive user interest and subscription engagement. The inclusion of offline viewing features addresses real user needs, enhancing overall service appeal.</p>
+      </section>
+
+      <footer>
+        <p>Published: 2025-11-28</p>
+      </footer>
+    </article>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Scroll reveal animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      if(!('IntersectionObserver' in window)) return;
+      
+      var reveals = document.querySelectorAll('section');
+      var io = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      
+      reveals.forEach(function(el){ 
+        el.classList.add('scroll-reveal');
+        io.observe(el); 
+      });
+    });
+  
+  // Prevent context menu
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+</body>
+</html>

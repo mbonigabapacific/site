@@ -1,0 +1,34 @@
+RESUME PLACEHOLDER
+
+This is a placeholder file. Your actual resume PDF should be placed at:
+/assets/resume.pdf
+
+---
+
+ABOUT THIS PLACEHOLDER:
+This file was auto-created because resume.pdf was referenced in the portfolio
+but the file didn't exist. Your portfolio references the resume in two locations:
+
+1. Main CTA Button: "Download Resume"
+2. Client/Recruiter Mode: "Download Resume (PDF)" button
+
+---
+
+TO ADD YOUR ACTUAL RESUME:
+1. Create or export your resume as a PDF file
+2. Rename it to: resume.pdf
+3. Place it in the /assets/ folder of your portfolio
+4. Delete this placeholder file
+
+Your portfolio will then automatically link to the PDF when users click
+the "Download Resume" buttons.
+
+---
+
+PORTFOLIO RESUME LINKS:
+- File path: assets/resume.pdf
+- HTML references:
+  * Line 421: Download Resume button (main portfolio)
+  * Line 748: Download Resume (PDF) button (recruiter mode)
+
+Created: 2026-04-17

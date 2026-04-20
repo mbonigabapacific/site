@@ -1,0 +1,2248 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movfix - Unlimited Movies, TV Shows & More</title>
+    <meta name="description" content="Portfolio website of Mbonigaba Pacific showcasing web development, web design, and graphic design projects." />
+		<meta name="keywords" content="Mbonigaba Pacific, web development, web design, graphic design, portfolio" />
+		<meta name="author" content="Mbonigaba Pacific" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Google Site Verification (replace token if needed) -->
+		<meta name="google-site-verification" content="PfNXKP3ZrYzhZEleFm3y3m_BlQJTI9XDAYsX4rw5OAs" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Mbonigaba Pacific | Portfolio" />
+		<meta property="og:description" content="Portfolio website of Mbonigaba Pacific showcasing web development, web design, and graphic design projects." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mbonigabapacific.github.io/site/" />
+		<meta property="og:image" content="https://mbonigabapacific.github.io/site/assets/images/me.png" />
+		<link rel="canonical" href="https://mbonigabapacific.github.io/site/" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Mbonigaba Pacific | Portfolio" />
+		<meta name="twitter:description" content="Portfolio website of Mbonigaba Pacific showcasing web development, web design, and graphic design projects." />
+		<meta name="twitter:image" content="https://mbonigabapacific.github.io/site/assets/images/me.png" />
+		<meta name="twitter:site" content="@mbonigabapacific" />
+
+		<!-- PWA / Mobile Theme Colors -->
+		<meta name="theme-color" content="#FF8800" id="theme-color-meta" />
+		<meta name="msapplication-navbutton-color" content="#FF8800" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- Favicon & Manifest (ensure files exist at these paths) -->
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png" />
+		<link rel="manifest" href="assets/favicon_io/site.webmanifest" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #e50914;
+            --primary-dark: #b20710;
+            --dark: #141414;
+            --dark-secondary: #1f1f1f;
+            --light: #ffffff;
+            --gray: #8c8c8c;
+            --gray-dark: #2d2d2d;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --radius: 8px;
+            
+            /* Theme variables */
+            --bg-primary: #141414;
+            --bg-secondary: #1f1f1f;
+            --bg-tertiary: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #8c8c8c;
+            --border-color: #2d2d2d;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-tertiary: #e0e0e0;
+            --text-primary: #141414;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --dark: #ffffff;
+            --dark-secondary: #f5f5f5;
+            --gray-dark: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--gray);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--light);
+            background-color: transparent;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--bg-secondary);
+            width: 90%;
+            max-width: 500px;
+            border-radius: var(--radius);
+            padding: 2rem;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--light);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            max-width: 300px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background-color: #28a745;
+        }
+
+        .toast.info {
+            background-color: #17a2b8;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        [data-theme="light"] header {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), transparent);
+        }
+
+        header.scrolled {
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links li a.active {
+            color: var(--primary);
+        }
+
+        .nav-links li a.active::after {
+            width: 100%;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-top: 5px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1001;
+            box-shadow: var(--shadow);
+        }
+
+        .search-results.active {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 12px 15px;
+            display: flex;
+            gap: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-item:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        .search-result-item img {
+            width: 60px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .search-result-item-info {
+            flex: 1;
+        }
+
+        .search-result-item-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        .search-result-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .search-box input {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 10px 15px;
+            border-radius: var(--radius);
+            width: 200px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            width: 250px;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .user-profile {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: var(--bg-secondary);
+            min-width: 200px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1001;
+            border: 1px solid var(--border-color);
+        }
+
+        .user-profile:hover .user-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .user-dropdown ul {
+            padding: 1rem 0;
+        }
+
+        .user-dropdown ul li {
+            padding: 0.8rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .user-dropdown ul li:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .user-dropdown ul li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .my-list-badge {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-primary);
+            margin-right: 10px;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover i {
+            transform: rotate(180deg);
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s ease-in-out infinite;
+            border-radius: var(--radius);
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton-movie-card {
+            height: 400px;
+        }
+
+        /* Enhanced Animations */
+        .movie-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .movie-card:nth-child(1) { animation-delay: 0.1s; }
+        .movie-card:nth-child(2) { animation-delay: 0.2s; }
+        .movie-card:nth-child(3) { animation-delay: 0.3s; }
+        .movie-card:nth-child(4) { animation-delay: 0.4s; }
+        .movie-card:nth-child(5) { animation-delay: 0.5s; }
+        .movie-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Page Container */
+        .page {
+            display: none;
+            min-height: calc(100vh - 200px);
+            padding: 120px 0 80px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1025&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-meta i {
+            color: var(--primary);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Movies Section */
+        .movies-section {
+            padding: 3rem 0;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .movie-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--primary);
+        }
+
+        .movie-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-content {
+            padding: 1.2rem;
+        }
+
+        .movie-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .movie-rating {
+            color: #ffc107;
+        }
+
+        .movie-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .movie-actions .btn {
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        .in-list {
+            background-color: #28a745;
+        }
+
+        .in-list:hover {
+            background-color: #218838;
+        }
+
+        /* Plan Selection Page */
+        .plans-hero {
+            text-align: center;
+            padding: 150px 0 50px;
+            background: linear-gradient(to right, rgba(20, 20, 20, 0.9), rgba(31, 31, 31, 0.9)), url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1031&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .plans-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .plans-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .current-plan {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: center;
+            border-left: 5px solid var(--primary);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary);
+        }
+
+        /* My List Page */
+        .my-list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .list-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .empty-list {
+            text-align: center;
+            padding: 5rem 0;
+            color: var(--gray);
+        }
+
+        .empty-list i {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+        }
+
+        /* Watch Page */
+        .watch-container {
+            padding: 120px 0 50px;
+        }
+
+        .video-player {
+            width: 100%;
+            background-color: #000;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .video-player video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 500px;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        .video-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .video-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-poster {
+            flex: 0 0 300px;
+        }
+
+        .video-poster img {
+            width: 100%;
+            border-radius: var(--radius);
+        }
+
+        .video-details {
+            flex: 1;
+        }
+
+        .video-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-meta {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            color: var(--gray);
+        }
+
+        .video-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .video-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 5rem 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background-color: var(--bg-primary);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .pricing-card.selected {
+            border-color: var(--primary);
+            background-color: rgba(229, 9, 20, 0.05);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+        }
+
+        .pricing-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .plan-price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .plan-features {
+            margin: 2rem 0;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-dark);
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .plan-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 4rem 0 2rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+            transition: var(--transition);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-dark);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .search-box input {
+                width: 150px;
+            }
+
+            .video-info {
+                flex-direction: column;
+            }
+
+            .video-poster {
+                flex: 0 0 auto;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .search-box input {
+                width: 180px;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .movies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .movie-img {
+                height: 240px;
+            }
+
+            .plans-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-card.featured::before {
+                right: -30px;
+                padding: 5px 30px;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+                text-align: center;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .hero-actions {
+                align-items: center;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-box input {
+                width: 140px;
+            }
+
+            .movie-actions {
+                flex-direction: column;
+            }
+
+            .my-list-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="showPage('home')">Mov<span>fix</span></a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="active" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('movies')">Movies</a></li>
+                    <li><a href="#" onclick="showPage('tv-shows')">TV Shows</a></li>
+                    <li><a href="#" onclick="showPage('my-list')">My List <span class="my-list-badge" id="listCount">0</span></a></li>
+                    <li><a href="#" onclick="showPage('plans')">Plans</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    
+                    <div class="search-box">
+                        <input type="text" placeholder="Search movies..." id="searchInput" aria-label="Search movies and TV shows">
+                        <i class="fas fa-search"></i>
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">JD</div>
+                        <div class="user-dropdown">
+                            <ul>
+                                <li><i class="fas fa-user"></i> Profile</li>
+                                <li><i class="fas fa-cog"></i> Settings</li>
+                                <li><i class="fas fa-question-circle"></i> Help</li>
+                                <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Movfix: Unlimited Movie, TV Shows, & More.</h1>
+                    <p class="hero-subtitle">Watch anywhere. Cancel anytime. Ready to watch? Enter your email to create or restart your membership.</p>
+                    
+                    <div class="hero-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 2019</span>
+                        <span><i class="fas fa-clock"></i> 154 min</span>
+                        <span><i class="fas fa-star"></i> 8.5/10</span>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#" class="btn" onclick="watchMovie('featured')"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#" class="btn btn-outline" onclick="addToList('featured')"><i class="fas fa-plus"></i> Add to List</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Movies Section -->
+        <section class="movies-section">
+            <div class="container">
+                <h2 class="section-title">Upcoming Movies</h2>
+                
+                <div class="movies-grid" id="movies-grid">
+                    <!-- Movie cards will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section Preview -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p style="margin-bottom: 2rem; color: var(--gray);">Upgrade your experience with our premium plans</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Basic</h3>
+                        <div class="plan-price">$3.99<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Standard Definition (SD)</li>
+                            <li><i class="fas fa-check"></i> Watch on 1 device at a time</li>
+                            <li><i class="fas fa-check"></i> Limited movies and TV shows</li>
+                            <li><i class="fas fa-check"></i> Cancel anytime</li>
+                        </ul>
+                        <a href="#" class="btn" onclick="showPage('plans')">View Plan</a>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <h3 class="plan-name">Standard</h3>
+                        <div class="plan-price">$7.99<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> High Definition (HD)</li>
+                            <li><i class="fas fa-check"></i> Watch on 2 devices at a time</li>
+                            <li><i class="fas fa-check"></i> Unlimited movies and TV shows</li>
+                            <li><i class="fas fa-check"></i> Cancel anytime</li>
+                        </ul>
+                        <a href="#" class="btn" onclick="showPage('plans')">View Plan</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Premium</h3>
+                        <div class="plan-price">$11.99<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Ultra HD (4K) + HDR</li>
+                            <li><i class="fas fa-check"></i> Watch on 4 devices at a time</li>
+                            <li><i class="fas fa-check"></i> Unlimited movies and TV shows</li>
+                            <li><i class="fas fa-check"></i> Cancel anytime</li>
+                        </ul>
+                        <a href="#" class="btn" onclick="showPage('plans')">View Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Movies Page -->
+    <section id="movies-page" class="page">
+        <div class="container">
+            <div class="movies-section">
+                <h2 class="section-title">All Movies</h2>
+                <div class="movies-grid" id="all-movies-grid">
+                    <!-- All movie cards will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TV Shows Page -->
+    <section id="tv-shows-page" class="page">
+        <div class="container">
+            <div class="movies-section">
+                <h2 class="section-title">TV Shows</h2>
+                <div class="movies-grid" id="tv-shows-grid">
+                    <!-- TV Show cards will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My List Page -->
+    <section id="my-list-page" class="page">
+        <div class="container">
+            <div class="my-list-header">
+                <h2 class="section-title">My List</h2>
+                <div class="list-actions">
+                    <button class="btn btn-outline" onclick="clearList()">Clear List</button>
+                    <button class="btn" onclick="showRandomFromList()">Play Random</button>
+                </div>
+            </div>
+            
+            <div class="movies-grid" id="my-list-grid">
+                <!-- My list items will be generated by JavaScript -->
+            </div>
+            
+            <div id="empty-list-message" class="empty-list" style="display: none;">
+                <i class="fas fa-film"></i>
+                <h3>Your list is empty</h3>
+                <p>Add movies and TV shows to your list to watch them later</p>
+                <a href="#" class="btn" onclick="showPage('movies')" style="margin-top: 1.5rem;">Browse Movies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Page -->
+    <section id="plans-page" class="page">
+        <section class="plans-hero">
+            <div class="container">
+                <h1>Choose the plan that's right for you</h1>
+                <p>Join Movfix today and enjoy unlimited movies and TV shows. Cancel anytime.</p>
+                
+                <div class="current-plan" id="currentPlan">
+                    <h3><i class="fas fa-crown"></i> Your Current Plan: <span id="currentPlanName">Basic</span></h3>
+                    <p>Billing Date: <strong id="billingDate">Next month</strong></p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Available Plans</h2>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card" id="plan-basic">
+                        <h3 class="plan-name">Basic</h3>
+                        <div class="plan-price">$3.99<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Standard Definition (SD)</li>
+                            <li><i class="fas fa-check"></i> Watch on 1 device at a time</li>
+                            <li><i class="fas fa-check"></i> Limited movies and TV shows</li>
+                            <li><i class="fas fa-check"></i> Cancel anytime</li>
+                        </ul>
+                        <button class="btn" onclick="selectPlan('basic')" id="select-basic">Select Plan</button>
+                    </div>
+                    
+                    <div class="pricing-card featured" id="plan-standard">
+                        <h3 class="plan-name">Standard</h3>
+                        <div class="plan-price">$7.99<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> High Definition (HD)</li>
+                            <li><i class="fas fa-check"></i> Watch on 2 devices at a time</li>
+                            <li><i class="fas fa-check"></i> Unlimited movies and TV shows</li>
+                            <li><i class="fas fa-check"></i> Cancel anytime</li>
+                        </ul>
+                        <button class="btn" onclick="selectPlan('standard')" id="select-standard">Select Plan</button>
+                    </div>
+                    
+                    <div class="pricing-card" id="plan-premium">
+                        <h3 class="plan-name">Premium</h3>
+                        <div class="plan-price">$11.99<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Ultra HD (4K) + HDR</li>
+                            <li><i class="fas fa-check"></i> Watch on 4 devices at a time</li>
+                            <li><i class="fas fa-check"></i> Unlimited movies and TV shows</li>
+                            <li><i class="fas fa-check"></i> Cancel anytime</li>
+                        </ul>
+                        <button class="btn" onclick="selectPlan('premium')" id="select-premium">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Watch Page -->
+    <section id="watch-page" class="page">
+        <div class="container watch-container">
+            <div class="video-player">
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>Ready to Watch</h3>
+                    <p>Click play to start streaming</p>
+                </div>
+                <video id="moviePlayer" controls style="display: none;">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="video-info">
+                <div class="video-poster">
+                    <img id="watchPoster" src="" alt="Movie Poster">
+                </div>
+                <div class="video-details">
+                    <h2 id="watchTitle">Movie Title</h2>
+                    <div class="video-meta">
+                        <span><i class="fas fa-calendar-alt"></i> <span id="watchYear">2023</span></span>
+                        <span><i class="fas fa-clock"></i> <span id="watchDuration">120 min</span></span>
+                        <span><i class="fas fa-star"></i> <span id="watchRating">8.5/10</span></span>
+                    </div>
+                    <p class="video-description" id="watchDescription">
+                        <!-- Description will be filled by JavaScript -->
+                    </p>
+                    <div class="video-controls">
+                        <button class="btn" onclick="playPauseVideo()"><i class="fas fa-play"></i> Play</button>
+                        <button class="btn btn-outline" id="listToggleBtn" onclick="toggleWatchInList()"><i class="fas fa-plus"></i> Add to List</button>
+                        <button class="btn btn-warning" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal" id="planConfirmModal">
+        <div class="modal-content">
+            <div class="close-modal" onclick="closeModal('planConfirmModal')">&times;</div>
+            <h2>Confirm Plan Change</h2>
+            <p id="planConfirmText">You are about to change your subscription plan.</p>
+            <div class="plan-details" id="planConfirmDetails" style="background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--radius); margin: 1.5rem 0;">
+                <!-- Plan details will be inserted here -->
+            </div>
+            <p style="color: var(--gray); font-size: 0.9rem; margin: 1rem 0;">Your new plan will be effective immediately. The change in billing will occur on your next billing date.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn" onclick="confirmPlanChange()">Confirm Change</button>
+                <button class="btn btn-outline" onclick="closeModal('planConfirmModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">
+        <div id="toastMessage">Notification message</div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Movfix</div>
+                    <p>Movfix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('movies')">Action</a></li>
+                        <li><a href="#" onclick="showPage('movies')">Comedy</a></li>
+                        <li><a href="#" onclick="showPage('movies')">Drama</a></li>
+                        <li><a href="#" onclick="showPage('movies')">Horror</a></li>
+                        <li><a href="#" onclick="showPage('movies')">Sci-Fi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('plans')">Plans</a></li>
+                        <li><a href="#" onclick="showToast('Contact page would open here', 'info')">Contact Us</a></li>
+                        <li><a href="#" onclick="showToast('Privacy policy page would open here', 'info')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showToast('Terms of service page would open here', 'info')">Terms of Service</a></li>
+                        <li><a href="#" onclick="showToast('FAQ page would open here', 'info')">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#" onclick="showToast('Facebook page would open here', 'info')"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#" onclick="showToast('Twitter page would open here', 'info')"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#" onclick="showToast('Instagram page would open here', 'info')"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#" onclick="showToast('YouTube page would open here', 'info')"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Movfix. All Rights Reserved. | <span id="currentPlanFooter">Current Plan: Basic</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Application State
+        const appState = {
+            currentUser: {
+                name: "John Doe",
+                plan: "basic",
+                billingDate: "2023-12-15"
+            },
+            myList: [],
+            movies: [
+                { 
+                    id: 1,
+                    title: "The Perfect Match", 
+                    year: "2023", 
+                    duration: "128 min", 
+                    rating: "7.8", 
+                    image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A romantic comedy about two people who seem perfect for each other but keep missing their chance to connect.",
+                    type: "movie"
+                },
+                { 
+                    id: 2,
+                    title: "The Dog World", 
+                    year: "2023", 
+                    duration: "112 min", 
+                    rating: "8.2", 
+                    image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "An animated adventure following a group of dogs who embark on an epic journey to save their neighborhood.",
+                    type: "movie"
+                },
+                { 
+                    id: 3,
+                    title: "Marriage in a Bottle", 
+                    year: "2023", 
+                    duration: "136 min", 
+                    rating: "7.5", 
+                    image: "https://images.unsplash.com/photo-1560109947-543149eceb16?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A drama exploring the complexities of marriage and relationships in the modern world.",
+                    type: "movie"
+                },
+                { 
+                    id: 4,
+                    title: "Adventure", 
+                    year: "2023", 
+                    duration: "148 min", 
+                    rating: "8.9", 
+                    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "An action-packed adventure film following explorers through uncharted territories.",
+                    type: "movie"
+                },
+                { 
+                    id: 5,
+                    title: "The Adult Bottle", 
+                    year: "2022", 
+                    duration: "122 min", 
+                    rating: "6.9", 
+                    image: "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A coming-of-age story about navigating the challenges of adulthood.",
+                    type: "movie"
+                },
+                { 
+                    id: 6,
+                    title: "Women's Day", 
+                    year: "2023", 
+                    duration: "118 min", 
+                    rating: "8.1", 
+                    image: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A powerful drama celebrating the achievements and struggles of women throughout history.",
+                    type: "movie"
+                },
+                { 
+                    id: 7,
+                    title: "Mystery Valley", 
+                    year: "2023", 
+                    duration: "132 min", 
+                    rating: "8.4", 
+                    image: "https://images.unsplash.com/photo-1512070679279-8988d32161be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A thrilling mystery set in a remote valley with strange occurrences.",
+                    type: "movie"
+                },
+                { 
+                    id: 8,
+                    title: "Cyber Frontier", 
+                    year: "2023", 
+                    duration: "140 min", 
+                    rating: "8.7", 
+                    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A sci-fi epic about hackers fighting for freedom in a digital world.",
+                    type: "movie"
+                }
+            ],
+            tvShows: [
+                { 
+                    id: 101,
+                    title: "Space Explorers", 
+                    year: "2022", 
+                    seasons: "3", 
+                    rating: "9.1", 
+                    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A sci-fi series following a crew of astronauts on a mission to explore distant galaxies.",
+                    type: "tv"
+                },
+                { 
+                    id: 102,
+                    title: "City Lights", 
+                    year: "2021", 
+                    seasons: "4", 
+                    rating: "8.5", 
+                    image: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A drama series about the interconnected lives of people living in a bustling metropolis.",
+                    type: "tv"
+                },
+                { 
+                    id: 103,
+                    title: "Detective Chronicles", 
+                    year: "2023", 
+                    seasons: "2", 
+                    rating: "8.8", 
+                    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    description: "A crime procedural following detectives as they solve complex cases.",
+                    type: "tv"
+                }
+            ],
+            selectedPlan: null,
+            currentWatching: null
+        };
+
+        // DOM Elements
+        const header = document.getElementById('header');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const moviesGrid = document.getElementById('movies-grid');
+        const allMoviesGrid = document.getElementById('all-movies-grid');
+        const tvShowsGrid = document.getElementById('tv-shows-grid');
+        const myListGrid = document.getElementById('my-list-grid');
+        const emptyListMessage = document.getElementById('empty-list-message');
+        const listCount = document.getElementById('listCount');
+        const searchInput = document.getElementById('searchInput');
+        const currentPlanName = document.getElementById('currentPlanName');
+        const currentPlanFooter = document.getElementById('currentPlanFooter');
+        const billingDate = document.getElementById('billingDate');
+        const moviePlayer = document.getElementById('moviePlayer');
+        const videoPlaceholder = document.getElementById('videoPlaceholder');
+        const toastNotification = document.getElementById('toastNotification');
+
+        // Initialize the application
+        function initApp() {
+            // Load saved state from localStorage
+            const savedState = localStorage.getItem('movfixState');
+            if (savedState) {
+                const parsed = JSON.parse(savedState);
+                appState.myList = parsed.myList || [];
+                appState.currentUser.plan = parsed.currentUser?.plan || "basic";
+            }
+            
+            // Update UI with saved state
+            updateListCount();
+            updateCurrentPlanUI();
+            generateMovieCards();
+            generateAllMoviesCards();
+            generateTVShowCards();
+            updateMyListDisplay();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Show home page by default
+            showPage('home');
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                filterMovies(searchTerm);
+            });
+
+            // Video player event listeners
+            moviePlayer.addEventListener('play', () => {
+                videoPlaceholder.style.display = 'none';
+                moviePlayer.style.display = 'block';
+            });
+
+            moviePlayer.addEventListener('pause', () => {
+                // Optional: Add pause handling
+            });
+
+            // Save state before page unload
+            window.addEventListener('beforeunload', saveState);
+        }
+
+        // Save application state to localStorage
+        function saveState() {
+            localStorage.setItem('movfixState', JSON.stringify({
+                myList: appState.myList,
+                currentUser: appState.currentUser
+            }));
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toastNotification');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add(type);
+            
+            // Show toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Show modal
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Show page function
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId + '-page').classList.add('active');
+            
+            // Update active nav link
+            if (pageId === 'home') {
+                document.querySelector('.nav-links a[onclick="showPage(\'home\')"]').classList.add('active');
+            } else {
+                document.querySelector(`.nav-links a[onclick="showPage('${pageId}')"]`).classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Stop video if playing
+            if (moviePlayer && !moviePlayer.paused) {
+                moviePlayer.pause();
+            }
+        }
+
+        // Generate movie cards for home page
+        function generateMovieCards() {
+            moviesGrid.innerHTML = '';
+            
+            appState.movies.slice(0, 6).forEach(movie => {
+                const isInList = appState.myList.some(item => item.id === movie.id);
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                
+                movieCard.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <div class="movie-meta">
+                            <span>${movie.year}</span>
+                            <span>${movie.duration}</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${movie.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${movie.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn ${isInList ? 'in-list' : 'btn-outline'}" onclick="addToList(${movie.id})">
+                                <i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                moviesGrid.appendChild(movieCard);
+            });
+        }
+
+        // Generate all movie cards
+        function generateAllMoviesCards() {
+            allMoviesGrid.innerHTML = '';
+            
+            appState.movies.forEach(movie => {
+                const isInList = appState.myList.some(item => item.id === movie.id);
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                
+                movieCard.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <div class="movie-meta">
+                            <span>${movie.year}</span>
+                            <span>${movie.duration}</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${movie.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${movie.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn ${isInList ? 'in-list' : 'btn-outline'}" onclick="addToList(${movie.id})">
+                                <i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                allMoviesGrid.appendChild(movieCard);
+            });
+        }
+
+        // Generate TV show cards
+        function generateTVShowCards() {
+            tvShowsGrid.innerHTML = '';
+            
+            appState.tvShows.forEach(show => {
+                const isInList = appState.myList.some(item => item.id === show.id);
+                
+                const showCard = document.createElement('div');
+                showCard.className = 'movie-card';
+                
+                showCard.innerHTML = `
+                    <img src="${show.image}" alt="${show.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${show.title}</h3>
+                        <div class="movie-meta">
+                            <span>${show.year}</span>
+                            <span>${show.seasons} Seasons</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${show.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${show.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn ${isInList ? 'in-list' : 'btn-outline'}" onclick="addToList(${show.id})">
+                                <i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                tvShowsGrid.appendChild(showCard);
+            });
+        }
+
+        // Update my list display
+        function updateMyListDisplay() {
+            myListGrid.innerHTML = '';
+            
+            if (appState.myList.length === 0) {
+                emptyListMessage.style.display = 'block';
+                myListGrid.style.display = 'none';
+                return;
+            }
+            
+            emptyListMessage.style.display = 'none';
+            myListGrid.style.display = 'grid';
+            
+            appState.myList.forEach(item => {
+                const listCard = document.createElement('div');
+                listCard.className = 'movie-card';
+                
+                listCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${item.title}</h3>
+                        <div class="movie-meta">
+                            <span>${item.year}</span>
+                            <span>${item.type === 'movie' ? item.duration : item.seasons + ' Seasons'}</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${item.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${item.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn in-list" onclick="removeFromList(${item.id})"><i class="fas fa-times"></i> Remove</button>
+                        </div>
+                    </div>
+                `;
+                
+                myListGrid.appendChild(listCard);
+            });
+        }
+
+        // Update list count
+        function updateListCount() {
+            listCount.textContent = appState.myList.length;
+        }
+
+        // Update current plan UI
+        function updateCurrentPlanUI() {
+            const planName = appState.currentUser.plan;
+            currentPlanName.textContent = planName.charAt(0).toUpperCase() + planName.slice(1);
+            currentPlanFooter.textContent = `Current Plan: ${planName.charAt(0).toUpperCase() + planName.slice(1)}`;
+            
+            // Update plan selection UI
+            document.querySelectorAll('.pricing-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            document.getElementById(`plan-${planName}`).classList.add('selected');
+            
+            // Update plan button text
+            document.getElementById(`select-${planName}`).textContent = 'Current Plan';
+            document.getElementById(`select-${planName}`).disabled = true;
+            document.getElementById(`select-${planName}`).classList.add('btn-success');
+        }
+
+        // Filter movies based on search term
+        function filterMovies(searchTerm) {
+            const allMovies = [...appState.movies, ...appState.tvShows];
+            const filtered = allMovies.filter(item => 
+                item.title.toLowerCase().includes(searchTerm) || 
+                item.description.toLowerCase().includes(searchTerm)
+            );
+            
+            // Update all grids with filtered results
+            updateGridWithFilteredResults(filtered);
+        }
+
+        // Update grids with filtered results
+        function updateGridWithFilteredResults(filteredItems) {
+            // Clear all grids
+            moviesGrid.innerHTML = '';
+            allMoviesGrid.innerHTML = '';
+            tvShowsGrid.innerHTML = '';
+            
+            // Update home page grid (movies only)
+            const filteredMovies = filteredItems.filter(item => item.type === 'movie').slice(0, 6);
+            filteredMovies.forEach(movie => {
+                const isInList = appState.myList.some(item => item.id === movie.id);
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                
+                movieCard.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <div class="movie-meta">
+                            <span>${movie.year}</span>
+                            <span>${movie.duration}</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${movie.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${movie.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn ${isInList ? 'in-list' : 'btn-outline'}" onclick="addToList(${movie.id})">
+                                <i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                moviesGrid.appendChild(movieCard);
+            });
+            
+            // Update movies page grid (movies only)
+            const allFilteredMovies = filteredItems.filter(item => item.type === 'movie');
+            allFilteredMovies.forEach(movie => {
+                const isInList = appState.myList.some(item => item.id === movie.id);
+                
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                
+                movieCard.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <div class="movie-meta">
+                            <span>${movie.year}</span>
+                            <span>${movie.duration}</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${movie.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${movie.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn ${isInList ? 'in-list' : 'btn-outline'}" onclick="addToList(${movie.id})">
+                                <i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                allMoviesGrid.appendChild(movieCard);
+            });
+            
+            // Update TV shows page grid (TV shows only)
+            const filteredTVShows = filteredItems.filter(item => item.type === 'tv');
+            filteredTVShows.forEach(show => {
+                const isInList = appState.myList.some(item => item.id === show.id);
+                
+                const showCard = document.createElement('div');
+                showCard.className = 'movie-card';
+                
+                showCard.innerHTML = `
+                    <img src="${show.image}" alt="${show.title}" class="movie-img">
+                    <div class="movie-content">
+                        <h3 class="movie-title">${show.title}</h3>
+                        <div class="movie-meta">
+                            <span>${show.year}</span>
+                            <span>${show.seasons} Seasons</span>
+                            <span class="movie-rating"><i class="fas fa-star"></i> ${show.rating}</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="btn" onclick="watchMovie(${show.id})"><i class="fas fa-play"></i> Watch</button>
+                            <button class="btn ${isInList ? 'in-list' : 'btn-outline'}" onclick="addToList(${show.id})">
+                                <i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                tvShowsGrid.appendChild(showCard);
+            });
+        }
+
+        // Watch movie function
+        function watchMovie(movieId) {
+            let mediaItem;
+            
+            if (movieId === 'featured') {
+                // Featured movie (first movie in the list)
+                mediaItem = appState.movies[0];
+            } else {
+                // Find movie or TV show by ID
+                mediaItem = [...appState.movies, ...appState.tvShows].find(item => item.id === movieId);
+            }
+            
+            if (!mediaItem) return;
+            
+            // Set current watching
+            appState.currentWatching = mediaItem;
+            
+            // Update watch page
+            document.getElementById('watchTitle').textContent = mediaItem.title;
+            document.getElementById('watchYear').textContent = mediaItem.year;
+            document.getElementById('watchDuration').textContent = mediaItem.type === 'movie' ? mediaItem.duration : mediaItem.seasons + ' Seasons';
+            document.getElementById('watchRating').textContent = mediaItem.rating;
+            document.getElementById('watchDescription').textContent = mediaItem.description;
+            document.getElementById('watchPoster').src = mediaItem.image;
+            
+            // Update list button
+            const isInList = appState.myList.some(item => item.id === mediaItem.id);
+            const listToggleBtn = document.getElementById('listToggleBtn');
+            listToggleBtn.innerHTML = `<i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add to List'}`;
+            listToggleBtn.className = isInList ? 'btn in-list' : 'btn btn-outline';
+            
+            // Show watch page
+            showPage('watch');
+            
+            // Auto-play if user has premium plan
+            if (appState.currentUser.plan === 'premium') {
+                setTimeout(() => {
+                    playPauseVideo();
+                }, 1000);
+            }
+        }
+
+        // Play/pause video
+        function playPauseVideo() {
+            if (moviePlayer.paused) {
+                moviePlayer.play();
+                document.querySelector('.video-controls .btn i').className = 'fas fa-pause';
+            } else {
+                moviePlayer.pause();
+                document.querySelector('.video-controls .btn i').className = 'fas fa-play';
+            }
+        }
+
+        // Add to list function
+        function addToList(movieId) {
+            let mediaItem;
+            
+            if (movieId === 'featured') {
+                // Featured movie (first movie in the list)
+                mediaItem = appState.movies[0];
+            } else {
+                // Find movie or TV show by ID
+                mediaItem = [...appState.movies, ...appState.tvShows].find(item => item.id === movieId);
+            }
+            
+            if (!mediaItem) return;
+            
+            // Check if already in list
+            const isInList = appState.myList.some(item => item.id === mediaItem.id);
+            
+            if (isInList) {
+                // Remove from list
+                appState.myList = appState.myList.filter(item => item.id !== mediaItem.id);
+                showToast(`Removed "${mediaItem.title}" from your list`, 'info');
+            } else {
+                // Add to list
+                appState.myList.push(mediaItem);
+                showToast(`Added "${mediaItem.title}" to your list`);
+            }
+            
+            // Update UI
+            updateListCount();
+            generateMovieCards();
+            generateAllMoviesCards();
+            generateTVShowCards();
+            updateMyListDisplay();
+            
+            // Save state
+            saveState();
+        }
+
+        // Remove from list
+        function removeFromList(movieId) {
+            appState.myList = appState.myList.filter(item => item.id !== movieId);
+            
+            // Update UI
+            updateListCount();
+            generateMovieCards();
+            generateAllMoviesCards();
+            generateTVShowCards();
+            updateMyListDisplay();
+            
+            showToast('Removed from your list', 'info');
+            
+            // Save state
+            saveState();
+        }
+
+        // Toggle watch item in list
+        function toggleWatchInList() {
+            if (appState.currentWatching) {
+                addToList(appState.currentWatching.id);
+                
+                // Update button in watch page
+                const isInList = appState.myList.some(item => item.id === appState.currentWatching.id);
+                const listToggleBtn = document.getElementById('listToggleBtn');
+                listToggleBtn.innerHTML = `<i class="fas ${isInList ? 'fa-check' : 'fa-plus'}"></i> ${isInList ? 'In List' : 'Add to List'}`;
+                listToggleBtn.className = isInList ? 'btn in-list' : 'btn btn-outline';
+            }
+        }
+
+        // Clear list
+        function clearList() {
+            if (appState.myList.length === 0) {
+                showToast('Your list is already empty', 'info');
+                return;
+            }
+            
+            if (confirm('Are you sure you want to clear your entire list?')) {
+                appState.myList = [];
+                
+                // Update UI
+                updateListCount();
+                generateMovieCards();
+                generateAllMoviesCards();
+                generateTVShowCards();
+                updateMyListDisplay();
+                
+                showToast('Your list has been cleared', 'info');
+                
+                // Save state
+                saveState();
+            }
+        }
+
+        // Show random from list
+        function showRandomFromList() {
+            if (appState.myList.length === 0) {
+                showToast('Your list is empty. Add some movies first!', 'info');
+                return;
+            }
+            
+            const randomIndex = Math.floor(Math.random() * appState.myList.length);
+            const randomItem = appState.myList[randomIndex];
+            
+            watchMovie(randomItem.id);
+        }
+
+        // Select plan
+        function selectPlan(planId) {
+            if (planId === appState.currentUser.plan) {
+                showToast('This is already your current plan', 'info');
+                return;
+            }
+            
+            appState.selectedPlan = planId;
+            
+            // Update modal content
+            const planNames = {
+                basic: 'Basic',
+                standard: 'Standard',
+                premium: 'Premium'
+            };
+            
+            const planPrices = {
+                basic: '$3.99/month',
+                standard: '$7.99/month',
+                premium: '$11.99/month'
+            };
+            
+            document.getElementById('planConfirmText').textContent = `You are about to change your plan from ${planNames[appState.currentUser.plan]} to ${planNames[planId]}.`;
+            
+            document.getElementById('planConfirmDetails').innerHTML = `
+                <h3>Plan Details</h3>
+                <p><strong>Current Plan:</strong> ${planNames[appState.currentUser.plan]} (${planPrices[appState.currentUser.plan]})</p>
+                <p><strong>New Plan:</strong> ${planNames[planId]} (${planPrices[planId]})</p>
+                <p><strong>Change:</strong> ${planId === 'premium' ? 'Upgrade' : planId === 'basic' ? 'Downgrade' : 'Change'}</p>
+            `;
+            
+            // Show confirmation modal
+            showModal('planConfirmModal');
+        }
+
+        // Confirm plan change
+        function confirmPlanChange() {
+            if (!appState.selectedPlan) return;
+            
+            // Update user plan
+            appState.currentUser.plan = appState.selectedPlan;
+            
+            // Update UI
+            updateCurrentPlanUI();
+            
+            // Close modal
+            closeModal('planConfirmModal');
+            
+            // Show success message
+            showToast(`Plan changed to ${appState.selectedPlan.charAt(0).toUpperCase() + appState.selectedPlan.slice(1)} successfully!`);
+            
+            // Save state
+            saveState();
+            
+            // Reset selected plan
+            appState.selectedPlan = null;
+        }
+
+        // Initialize the app
+        window.onload = initApp;
+    </script>
+    
+    <script>
+        // Prevent context menu
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>

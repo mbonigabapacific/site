@@ -9,11 +9,11 @@
 		<!-- Title & basic description (replace if desired) -->
 		<title>Mbonigaba Pacific | Full-Stack Developer & Software Engineer | Rwanda</title>
 		<meta name="description" content="Mbonigaba Pacific - Professional full-stack developer and software engineer in Rwanda specializing in web development, cloud architecture, and graphic design. Expert in scalable applications and modern web technologies." />
-		<meta name="keywords" content="Mbonigaba Pacific, software developer Rwanda, full-stack developer Ruhengeri, web development Rwanda, software engineer, graphic design Rwanda, cloud architecture, web applications, React, Node.js, Python, UI/UX design, portfolio developer Rwanda" />
+		<meta name="keywords" content="Mbonigaba Pacific, software developer Rwanda, full-stack developer Kigali, web development Rwanda, software engineer, graphic design Rwanda, cloud architecture, web applications, React, Node.js, Python, UI/UX design, portfolio developer Rwanda" />
 		<meta name="author" content="Mbonigaba Pacific" />
 		<meta name="robots" content="index, follow" />
 		<meta name="geo.region" content="RW" />
-		<meta name="geo.placename" content="Ruhengeri, Rwanda" />
+		<meta name="geo.placename" content="Kigali, Rwanda" />
 		<meta name="geo.position" content="-1.9701;30.1044" />
 		<meta name="ICBM" content="-1.9701, 30.1044" />
 		<meta name="language" content="English" />
@@ -88,12 +88,11 @@
 				"Graphic Design",
 				"React",
 				"Node.js",
-				"Python",
-				"Software Engineering"
+				"Python" 
 			],
 			"offers": {
 				"@type": "Offer",
-				"serviceType": "Web Development Services",
+				"serviceType": "Web Development Services And Graphic Design",
 				"description": "Professional web development, software engineering, and design services"
 			}
 		}
@@ -175,6 +174,35 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="assets/particles.js-master/particles.min.js"></script>
 
+		<!-- Google Translate -->
+		<script type="text/javascript">
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({
+					pageLanguage: 'en',
+					includedLanguages: 'en,kin,fr,es,de,it,pt,ru,ja,ko,zh-CN,zh-TW,ar,hi,sw',
+					layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+					autoDisplay: true,
+					multilanguagePage: true
+				}, 'google_translate_element');
+				
+				// Trigger translation prompt after a short delay
+				setTimeout(function() {
+					// Check if user's browser language is not English
+					var userLang = navigator.language || navigator.userLanguage;
+					if (userLang && userLang !== 'en' && userLang !== 'en-US') {
+						// Show translation prompt
+						var translateBar = document.querySelector('.goog-te-banner-frame');
+						if (!translateBar) {
+							// Manually trigger the translation bar
+							var event = new Event('google-translate-show');
+							document.dispatchEvent(event);
+						}
+					}
+				}, 2000);
+			}
+		</script>
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 		<!-- Editorial-design homepage styles -->
 		<style>
 			:root {
@@ -246,7 +274,7 @@
 			.site-header {
 				position: sticky;
 				top: 0;
-				z-index: 150;
+				z-index: 10004;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -255,11 +283,236 @@
 				background: rgba(255,255,255,0.98);
 				border-bottom: 1px solid rgba(0,0,0,0.05);
 			}
+			
+			/* Mobile Menu Toggle */
+			.mobile-menu-toggle {
+				display: none;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 44px;
+				height: 44px;
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				padding: 0;
+				z-index: 10003;
+				position: relative;
+				pointer-events: auto;
+			}
+			
+			.hamburger-line {
+				width: 24px;
+				height: 2px;
+				background: var(--on-surface);
+				margin: 3px 0;
+				transition: all 0.3s ease;
+				transform-origin: center;
+			}
+			
+			.mobile-menu-toggle:hover .hamburger-line {
+				background: var(--primary);
+			}
+			
+			.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+				transform: rotate(45deg) translate(5px, 5px);
+			}
+			
+			.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+				opacity: 0;
+				transform: scale(0);
+			}
+			
+			.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+				transform: rotate(-45deg) translate(7px, -6px);
+			}
 			.brand .eyebrow { margin: 0 0 0.75rem; font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--secondary); }
 			.brand h1 { margin: 0; font-size: clamp(2.25rem, 3.2vw, 3.75rem); line-height: 1.02; letter-spacing: -0.03em; }
-			.site-nav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-			.site-nav a { padding: 0.35rem 0.2rem; color: var(--on-surface-muted); }
-			.site-nav a:hover, .site-nav a:focus-visible { color: var(--primary); outline: none; }
+			.site-nav { 
+				display: flex; 
+				align-items: center; 
+				gap: 2rem; 
+				flex-wrap: wrap; 
+			}
+			
+			.nav-section {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			
+			.nav-title {
+				font-size: 0.75rem;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: var(--secondary);
+				margin: 0;
+				padding: 0.25rem 0;
+			}
+			
+			.nav-list {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				flex-wrap: wrap;
+			}
+			
+			.nav-link { 
+				padding: 0.35rem 0.6rem; 
+				color: var(--on-surface-muted); 
+				transition: all 0.2s ease;
+				border-radius: 8px;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4rem;
+				text-decoration: none;
+			}
+			
+			.nav-link:hover, .nav-link:focus-visible { 
+				color: var(--primary); 
+				background: rgba(231,161,105,0.1);
+				outline: none; 
+			}
+			
+			/* Mobile Navigation Menu */
+			@media (max-width: 768px) {
+				.mobile-menu-toggle {
+					display: flex;
+				}
+				
+				.site-nav {
+					position: fixed;
+					top: -100%;
+					left: 0;
+					right: 0;
+					width: 100%;
+					height: auto;
+					max-height: 85vh;
+					background: rgba(255, 255, 255, 0.99);
+					backdrop-filter: blur(5px);
+					flex-direction: column;
+					justify-content: flex-start;
+					padding: 5rem 1.5rem 2rem;
+					gap: 2rem;
+					box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+					transition: top 0.3s ease;
+					z-index: 10001;
+					overflow-y: auto;
+					border-bottom-left-radius: 24px;
+					border-bottom-right-radius: 24px;
+					display: none;
+				}
+				
+				.site-nav.active {
+					top: 0;
+					display: flex;
+				}
+				
+				.nav-section {
+					gap: 1rem;
+				}
+				
+				.nav-title {
+					font-size: 0.85rem;
+					padding: 0.5rem 0;
+					border-bottom: 1px solid rgba(231,161,105,0.2);
+					margin-bottom: 0.5rem;
+				}
+				
+				.nav-list {
+					flex-direction: column;
+					gap: 0.8rem;
+					align-items: stretch;
+				}
+				
+				.nav-link {
+					padding: 1rem 1.2rem;
+					border-radius: 12px;
+					background: rgba(231,161,105,0.05);
+					border: 1px solid rgba(231,161,105,0.1);
+					font-size: 1rem;
+					font-weight: 600;
+					text-align: left;
+					width: 100%;
+					transition: all 0.2s ease;
+					min-height: 52px; /* Better touch target */
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 0.8rem;
+				}
+				
+				.nav-link:hover, .nav-link:focus-visible {
+					background: var(--primary);
+					color: white;
+					transform: translateX(-4px);
+					outline: 2px solid var(--primary);
+					outline-offset: 2px;
+				}
+				
+				/* Overlay for mobile menu */
+				.mobile-menu-overlay {
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.3);
+					opacity: 0;
+					visibility: hidden;
+					transition: all 0.3s ease;
+					z-index: 10000;
+					-webkit-backdrop-filter: blur(5px);
+					backdrop-filter: blur(5px);
+				}
+				
+				.mobile-menu-overlay.active {
+					opacity: 1;
+					
+					visibility: visible;
+				}
+			}
+			
+			/* Large tablets in landscape */
+			@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+				.site-nav {
+					gap: 1rem;
+				}
+				
+				.nav-section {
+					gap: 0.3rem;
+				}
+				
+				.nav-title {
+					font-size: 0.7rem;
+				}
+				
+				.nav-list {
+					gap: 0.3rem;
+				}
+				
+				.nav-link {
+					padding: 0.3rem 0.6rem;
+					font-size: 0.9rem;
+				}
+				
+				.hero {
+					grid-template-columns: 1.2fr 1fr;
+					gap: 2rem;
+				}
+			}
+			
+			/* Ensure proper viewport handling */
+			@viewport {
+				width: device-width;
+				initial-scale: 1.0;
+				maximum-scale: 5.0;
+				user-scalable: yes;
+			}
 			.hero { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(320px,1fr); gap: 2.5rem; align-items: center; padding: 3.5rem 0 2.5rem; }
 			.hero-copy .eyebrow { margin: 0 0 1rem; font-size: 0.85rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--secondary); }
 			.hero-copy h2 { margin: 0; font-size: clamp(2.8rem, 4.7vw, 4.6rem); line-height: 0.95; letter-spacing: -0.04em; max-width: 11ch; }
@@ -323,189 +576,239 @@
 			.contact-card p { margin: 0 0 1rem; color: var(--on-surface-muted); }
 		 
 			.site-footer { padding: 2rem 0 0; color: var(--on-surface-muted); text-align: center; font-size: 0.95rem; }
+			/* Tablet View - Portrait and Landscape */
 			@media (max-width: 1200px) {
 				.hero { grid-template-columns: 1fr; }
 				.about-grid { grid-template-columns: 1fr; }
 				.badge-grid { grid-template-columns: 1fr; }
 			}
-			@media (max-width: 900px), (max-width: 1200px) and (orientation: landscape) {
+			
+			/* Medium Tablets and Large Phones */
+			@media (max-width: 900px) {
+				.page-shell { padding: 1.5rem 1.5rem 2.5rem; }
+				.hero { gap: 2rem; padding: 3rem 0 2rem; }
+				.hero-copy h2 { font-size: 3rem; max-width: 12ch; text-align: left; }
 				.projects-grid { gap: 1.5rem; }
 				.project-card { padding: 1.5rem; }
 			}
+			
+			/* Phone Landscape Orientation */
+			@media (max-width: 900px) and (orientation: landscape) {
+				.hero { padding: 2rem 0 1.5rem; }
+				.hero-copy h2 { font-size: 2.5rem; max-width: 15ch; text-align: left; }
+				.hero-actions { margin-top: 1.5rem; }
+				.section { padding: 2rem 0; }
+				.section-alt { padding: 2.5rem 1.5rem; }
+			}
+			
+			/* Small Tablets and Large Phones */
+			@media (max-width: 768px) {
+				.page-shell { padding: 1.3rem 1.3rem 2.2rem; }
+				.hero { gap: 1.8rem; padding: 2.5rem 0 1.8rem; }
+				.hero-copy h2 { font-size: 2.8rem; max-width: 14ch; text-align: left; }
+				.hero-copy p { font-size: 1rem; }
+				.button { padding: 0.85rem 1.4rem; font-size: 0.95rem; }
+				.section { padding: 2.5rem 0; }
+				.section-alt { padding: 2.8rem 1.8rem; }
+			}
+			
+			/* Medium Phones */
 			@media (max-width: 640px) {
 				.page-shell { padding: 1.2rem 1.2rem 2rem; }
-				.site-nav { justify-content: center; }
-				.hero-copy h2 { font-size: 2.7rem; }
+				.hero { gap: 1.5rem; padding: 2rem 0 1.5rem; }
+				.hero-copy h2 { font-size: 2.4rem; max-width: 12ch; text-align: left; }
+				.hero-copy p { font-size: 0.95rem; }
+				.hero-actions { gap: 0.8rem; margin-top: 1.5rem; }
+				.button { padding: 0.8rem 1.2rem; font-size: 0.9rem; }
+				.project-card { padding: 1.3rem; }
+				.project-card h3 { font-size: 1.4rem; }
+			}
+			
+			/* Phone Portrait Orientation */
+			@media (max-width: 640px) and (orientation: portrait) {
+				.hero { grid-template-columns: 1fr; text-align: center; }
+				.hero-copy { order: 2; }
+				.hero-copy h2 { text-align: center; max-width: 100%; }
+				.hero-figure { order: 1; margin-bottom: 2rem; }
+				.hero-actions { justify-content: center; }
+				.badge-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+			}
+			
+			/* Small Phones */
+			@media (max-width: 480px) {
+				.page-shell { padding: 1rem 1rem 1.8rem; }
+				.hero { padding: 1.8rem 0 1.2rem; }
+				.hero-copy h2 { font-size: 2rem; max-width: 10ch; text-align: left; }
+				.hero-copy p { font-size: 0.9rem; }
+				.button { padding: 0.75rem 1.1rem; font-size: 0.85rem; }
+				.project-card { padding: 1.2rem; border-radius: 20px; }
+				.project-card h3 { font-size: 1.3rem; }
+				.section { padding: 2rem 0; }
+				.section-alt { padding: 2.2rem 1.2rem; }
 			}
 			
 			/* Ultra-small phone optimization (320px and below) */
 			@media (max-width: 320px) {
 				.page-shell { 
-					padding: 1rem 0.8rem 1.5rem; 
+					padding: 0.8rem 0.6rem 1.5rem; 
 					min-height: 100vh;
 				}
 				
 				/* Header optimization */
 				.site-header {
-					padding: 0.8rem 0;
-					flex-direction: column;
-					gap: 1rem;
+					padding: 0.6rem 0;
 				}
 				
 				.brand h1 { 
-					font-size: 1.8rem; 
+					font-size: 1.6rem; 
 					line-height: 1.1;
 				}
 				
 				.brand .eyebrow { 
-					font-size: 0.7rem; 
-					margin-bottom: 0.5rem;
+					font-size: 0.65rem; 
+					margin-bottom: 0.4rem;
 				}
 				
-				/* Navigation optimization */
-				.site-nav {
-					flex-wrap: wrap;
-					gap: 0.5rem;
-					justify-content: center;
+				/* Mobile menu optimization */
+				.mobile-menu-toggle {
+					width: 40px;
+					height: 40px;
 				}
 				
-				.site-nav a {
-					padding: 0.3rem 0.5rem;
-					font-size: 0.85rem;
-				}
-				
-				.site-nav i {
-					font-size: 0.8em;
-					margin-right: 0.3rem;
-				}
-				
-				.theme-toggle {
-					padding: 0.3rem 0.5rem;
+				.hamburger-line {
+					width: 20px;
+					height: 1.5px;
 				}
 				
 				/* Hero section optimization */
 				.hero {
-					padding: 2rem 0 1.5rem;
-					gap: 1.5rem;
+					padding: 1.5rem 0 1rem;
+					gap: 1.2rem;
 				}
 				
 				.hero-copy h2 { 
-					font-size: 2rem; 
+					font-size: 1.8rem; 
 					line-height: 1.1;
 					max-width: 8ch;
+					text-align: left;
 				}
 				
 				.hero-copy p { 
-					font-size: 0.95rem; 
-					line-height: 1.6;
+					font-size: 0.85rem; 
+					line-height: 1.5;
 				}
 				
 				.hero-actions {
-					gap: 0.8rem;
-					margin-top: 1.5rem;
+					gap: 0.6rem;
+					margin-top: 1.2rem;
+					flex-direction: column;
 				}
 				
 				.button {
-					padding: 0.8rem 1.2rem;
-					font-size: 0.9rem;
+					padding: 0.7rem 1rem;
+					font-size: 0.8rem;
+					width: 100%;
+					text-align: center;
 				}
 				
 				/* Project cards optimization */
 				.project-card {
-					padding: 1.2rem;
-					border-radius: 20px;
+					padding: 1rem;
+					border-radius: 16px;
 				}
 				
 				.project-card h3 {
-					font-size: 1.3rem;
+					font-size: 1.2rem;
 					line-height: 1.2;
 				}
 				
 				.project-description {
-					font-size: 0.9rem;
-					line-height: 1.6;
+					font-size: 0.85rem;
+					line-height: 1.5;
 				}
 				
 				.project-impact {
-					font-size: 0.95rem;
+					font-size: 0.9rem;
 				}
 				
 				.chip {
-					padding: 0.4rem 0.7rem;
-					font-size: 0.8rem;
+					padding: 0.3rem 0.6rem;
+					font-size: 0.75rem;
 				}
 				
 				.metrics {
-					gap: 0.8rem;
-				}
-				
-				.metric .number {
-					font-size: 1.2rem;
-				}
-				
-				.metric .label {
-					font-size: 0.85rem;
-				}
-				
-				.project-actions {
 					gap: 0.6rem;
 				}
 				
+				.metric .number {
+					font-size: 1.1rem;
+				}
+				
+				.metric .label {
+					font-size: 0.8rem;
+				}
+				
+				.project-actions {
+					gap: 0.5rem;
+					flex-direction: column;
+				}
+				
 				.project-actions a {
-					padding: 0.7rem 1rem;
-					font-size: 0.85rem;
+					padding: 0.6rem 0.8rem;
+					font-size: 0.8rem;
+					text-align: center;
 				}
 				
 				/* Section optimization */
 				.section {
-					padding: 2rem 0;
+					padding: 1.5rem 0;
 				}
 				
 				.section-alt {
-					padding: 2rem 1rem;
-					border-radius: 24px;
-					margin: 1.5rem 0;
+					padding: 1.8rem 0.8rem;
+					border-radius: 20px;
+					margin: 1.2rem 0;
 				}
 				
 				.section-header h2 {
-					font-size: 1.8rem;
+					font-size: 1.6rem;
 					line-height: 1.1;
 				}
 				
 				.section-header p.eyebrow {
-					font-size: 0.8rem;
+					font-size: 0.75rem;
 				}
 				
 				/* Badge grid optimization */
 				.badge {
-					padding: 1rem;
-					border-radius: 20px;
+					padding: 0.8rem;
+					border-radius: 16px;
 				}
 				
 				.badge strong {
-					font-size: 0.9rem;
+					font-size: 0.85rem;
 				}
 				
 				.badge span {
-					font-size: 0.85rem;
+					font-size: 0.8rem;
 				}
 				
 				/* Footer optimization */
 				.site-footer {
-					padding: 1.5rem 0 0;
-					font-size: 0.85rem;
+					padding: 1.2rem 0 0;
+					font-size: 0.8rem;
 				}
 				
 				/* Scroll to top button optimization */
 				.scroll-to-top {
-					width: 45px;
-					height: 45px;
-					bottom: 20px;
-					right: 20px;
+					width: 40px;
+					height: 40px;
+					bottom: 15px;
+					right: 15px;
 				}
 				
 				.scroll-to-top i {
-					font-size: 16px;
+					font-size: 14px;
 				}
 			}
 			/* 3D Animation Styles */
@@ -527,10 +830,12 @@
 				left: 0;
 				width: 100vw;
 				height: 100vh;
-				z-index: 100;
+				z-index: 9999;
 				background: transparent;
 				will-change: transform;
 				transition: transform 0.1s ease-out;
+				pointer-events: none;
+				cursor: default;
 			}
 			
 			/* Make page-content background-less */
@@ -550,7 +855,7 @@
 			/* Ensure content overlays properly */
 			.page-shell {
 				position: relative;
-				z-index: 1;
+				z-index: 10005;
 				background: rgba(255, 255, 255, 0.85);
 				backdrop-filter: blur(20px);
 			}
@@ -573,16 +878,17 @@
 			
 			/* Ensure brand and navigation are clickable */
 			.brand, .site-nav {
-				pointer-events: auto;
+				pointer-events: auto !important;
 			}
 			
 			/* Ensure navigation links are clickable */
 			.site-nav a {
 				pointer-events: auto !important;
+		 
 			}
 			
 			/* Navigation icon styling */
-			.site-nav i {
+			.site-nav i { 
 				margin-right: 0.5rem;
 				font-size: 0.9em;
 				opacity: 0.8;
@@ -611,7 +917,7 @@
 				visibility: hidden;
 				transform: translateY(20px);
 				transition: all 0.3s ease;
-				z-index: 200;
+				z-index: 90;
 				backdrop-filter: blur(10px);
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 			}
@@ -637,6 +943,51 @@
 				visibility: visible;
 				transform: translateY(0);
 			}
+			
+			/* Google Translate Banner Styling */
+			.goog-te-banner-frame {
+				background: rgba(255, 255, 255, 0.95) !important;
+				backdrop-filter: blur(10px) !important;
+				border-bottom: 1px solid rgba(26,28,26,0.05) !important;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+			}
+			
+			.goog-te-banner {
+				background: transparent !important;
+				font-family: 'Manrope', sans-serif !important;
+			}
+			
+			.goog-te-banner .goog-te-banner-text {
+				color: var(--on-surface) !important;
+				font-size: 0.9rem !important;
+			}
+			
+			.goog-te-banner .goog-te-banner-button {
+				background: var(--primary) !important;
+				color: white !important;
+				border: none !important;
+				border-radius: 999px !important;
+				padding: 0.5rem 1rem !important;
+				font-family: 'Manrope', sans-serif !important;
+				font-weight: 600 !important;
+				cursor: pointer !important;
+				transition: all 0.2s ease !important;
+			}
+			
+			.goog-te-banner .goog-te-banner-button:hover {
+				background: var(--primary-container) !important;
+				transform: translateY(-1px) !important;
+			}
+			
+			/* Adjust body for banner */
+			body {
+				top: 0px !important;
+			}
+			
+			/* When banner is shown, adjust content */
+			body.goog-te-banner-frame-show {
+				padding-top: 40px !important;
+			}
 		</style>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -646,17 +997,36 @@
 		<button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
 			<i class="fas fa-arrow-up"></i>
 		</button>
+		<!-- Hidden Google Translate Element -->
+		<div id="google_translate_element" style="display: none;"></div>
+		<!-- Mobile Menu Overlay -->
+		<div class="mobile-menu-overlay"></div>
 		<div class="page-shell">
 			<header class="site-header">
 				<div class="brand">
 					<p class="eyebrow">The Digital Curator</p>
 					<h1>Mbonigaba Pacific</h1>
 				</div>
+				<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+					<span class="hamburger-line"></span>
+					<span class="hamburger-line"></span>
+					<span class="hamburger-line"></span>
+				</button>
 				<nav class="site-nav" aria-label="Primary navigation">
-					<a href="#work"><i class="fas fa-briefcase"></i> Work</a>
-					<a href="about.html"><i class="fas fa-user"></i> About</a>
-					<a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-					<a href="https://github.com/mbonigabapacific" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+					<div class="nav-section">
+						<h3 class="nav-title">Navigation</h3>
+						<ul class="nav-list">
+							<li><a href="#work" class="nav-link"><i class="fas fa-briefcase"></i> Work</a></li>
+							<li><a href="about.html" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+							<li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+						</ul>
+					</div>
+					<div class="nav-section">
+						<h3 class="nav-title">Connect</h3>
+						<ul class="nav-list">
+							<li><a href="https://github.com/mbonigabapacific" target="_blank" rel="noopener noreferrer" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+						</ul>
+					</div>
 				</nav>
 			</header>
 
@@ -807,10 +1177,11 @@
 				});
 			});
 			
+			
 			// Prevent context menu
 			document.addEventListener('contextmenu', event => event.preventDefault());
+			// Initialize particles.js 
 			
-			// Initialize particles.js
 			particlesJS('particles-js', {
 				particles: {
 					number: {
@@ -933,7 +1304,104 @@
 					behavior: 'smooth'
 				});
 			});
+			
+			// Mobile Menu Toggle Functionality
+			(function() {
+				const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+				const siteNav = document.querySelector('.site-nav');
+				const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+				const navLinks = document.querySelectorAll('.nav-link');
+				
+				// Check if elements exist
+				if (!mobileMenuToggle || !siteNav || !mobileMenuOverlay) {
+					console.error('Mobile menu elements not found');
+					return;
+				}
+				
+				// Toggle menu function
+				function toggleMobileMenu() {
+					const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+					
+					// Toggle menu state
+					mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+					siteNav.classList.toggle('active');
+					mobileMenuOverlay.classList.toggle('active');
+					
+					// Prevent body scroll when menu is open
+					if (!isExpanded) {
+						document.body.style.overflow = 'hidden';
+					} else {
+						document.body.style.overflow = '';
+					}
+				}
+				
+				// Close menu function
+				function closeMobileMenu() {
+					const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+					if (isExpanded) {
+						toggleMobileMenu();
+					}
+				}
+				
+				// Toggle menu when hamburger is clicked
+				mobileMenuToggle.addEventListener('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					toggleMobileMenu();
+				});
+				
+				// Close menu when overlay is clicked
+				mobileMenuOverlay.addEventListener('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					closeMobileMenu();
+				});
+				
+				// Close menu when navigation links are clicked
+				navLinks.forEach(function(link) {
+					link.addEventListener('click', function(e) {
+						const href = link.getAttribute('href');
+						if (href && href.startsWith('#')) {
+							e.preventDefault();
+							const target = document.querySelector(href);
+							if (target) {
+								closeMobileMenu();
+								setTimeout(function() {
+									target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+								}, 300);
+							}
+						} else {
+							closeMobileMenu();
+						}
+					});
+				});
+				
+				// Close menu on Escape key
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape') {
+						closeMobileMenu();
+					}
+				});
+				
+				// Handle window resize - close menu on desktop view
+				let resizeTimer;
+				window.addEventListener('resize', function() {
+					clearTimeout(resizeTimer);
+					resizeTimer = setTimeout(function() {
+						if (window.innerWidth > 768) {
+							closeMobileMenu();
+						}
+					}, 250);
+				});
+				
+				console.log('Mobile menu toggle initialized');
+			})();
 		</script>
+	</body>
+</html>
+				 
+
+			<!-- Advanced JS: IntersectionObserver for skills + reveal, Load more placeholder, modal focus management, improved form handling -->
 <script>
 	// Animate skill bars using IntersectionObserver (better than onload)
 	(function(){
@@ -1147,31 +1615,9 @@
 		});
 	});
 
-	// Splash Screen Hide
-	window.addEventListener('load', function(){
-		setTimeout(function(){
-			var splash = document.getElementById('splash-screen');
-			if(splash){
-				splash.style.display = 'none';
-			}
-		}, 3000); // Hide after 3 seconds
-	});
+ 
 
-	// Show splash on link clicks
-	document.addEventListener('DOMContentLoaded', function(){
-		var links = document.querySelectorAll('a');
-		links.forEach(function(link){
-			link.addEventListener('click', function(){
-				var splash = document.getElementById('splash-screen');
-				if(splash){
-					splash.style.display = 'flex';
-					setTimeout(function(){
-						splash.style.display = 'none';
-					}, 1000); // Hide after 1 seconds
-				}
-			});
-		});
-	});
+	 
 </script>
 
 <!-- Bootstrap JS -->
@@ -1180,29 +1626,5 @@
 <!-- Lottie Animation Script -->
 <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.10/dist/dotlottie-wc.js" type="module"></script>
 
-<div id="google_translate_element"></div>
-<script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,rw,sw',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<style>
-.goog-logo-link {
-  display: none !important;
-}
-.goog-te-gadget {
-  font-size: 0px !important;
-}
-.goog-te-gadget select {
-  font-size: 14px !important;
-  padding: 6px !important;
-  border-radius: 6px !important;
-}
-</style>
 </body>
 </html>
